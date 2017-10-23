@@ -1,4 +1,4 @@
-#upc;1;N;<25/10/17-00:00h>;anar a la etseib a buscar el titulo #upc <25/10/17> ;
+#upc;1;N;<25/10/17-00:00h>;anar a la etseib a buscar el titol #upc <25/10/17> ;
 #upc;2;N;<25/10/17-00:00h>;revisar documentacio necesaria #upc <25/10/17> ;
 #boda;1;N;<29/10/17-00:00h>;mirar nou video samedayboda #boda <29/10/17> ;
 #boda;2;N;<29/10/17-00:00h>;contestar @guillem pel video samedayboda #boda <29/10/17> ;
@@ -24,3 +24,5 @@
 #basquet;19;N;<22/04/18-12:30h>; @VILABASQUET-V 	B.M. VILADECANS B
 #basquet;20;N;<06/05/18-12:30h>; C.B. JOVENTUT CASTELLDEFELS @VILABASQUET-V
 #basquet;21;N;<13/05/18-12:30h>; @VILABASQUET-V 	CLUB NOU BASQUET VILANOVA
+#python;1;N;<31/12/17-18:00h>;llegir llibres #python networking <31/12/2017-18:00h> ;
+#python;2;N;<31/12/17-18:00h>;llegir llibres #python machine learning <31/12/2017-18:00h> ;

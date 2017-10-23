@@ -43,7 +43,28 @@ if sys.argv[1] == '+':
 
     for paraula in sys.argv[2:]:
         if re.search('^#',paraula): tema = paraula
-        if re.search('^<.+>$',paraula): data = paraula
+        if re.search('^<.+>$',paraula):
+            data = paraula
+            try:
+                test = datetime.strptime(paraula, '<%d/%m/%y-%H:%Mh>')
+            except:
+                try:
+                    test2 = datetime.strptime(paraula, '<%d/%m/%Y-%H:%Mh>')
+                    try:
+                        test3 = datetime.strptime(paraula, '<%d/%m/%y>')
+                    except:
+                        print(Fore.RED + '''\nel format de la data introduida no es aceptada, fer servir:
+                            - <%d/%m/%y-%H:%Mh>
+                            - <%d/%m/%Y-%H:%Mh>
+                            - o <%d/%m/%y>\n''')
+                        quit()
+                except:
+                    print(Fore.RED + '''\nel format de la data introduida no es aceptada, fer servir:
+                        - <%d/%m/%y-%H:%Mh>
+                        - <%d/%m/%Y-%H:%Mh>
+                        - o <%d/%m/%y>\n''')
+                    quit()
+
         descripcio = descripcio + paraula + ' '
 
     idmax = funcions.buscar_id(tema)
@@ -80,7 +101,7 @@ elif sys.argv[1] == 'ls':
     fhand.close()
 
     for tema in temas:
-        print('\n' + Fore.MAGENTA + Style.BRIGHT + tema)
+        print('\n' + Fore.GREEN + Style.BRIGHT + tema)
         fhand = open(brain,'r')
         for line in fhand:
             paraules = line.split(';')

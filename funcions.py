@@ -34,7 +34,13 @@ def print_task_incolor(task):
 
 def convertir_fecha(data):
     # data = <dd/mm/aa>
-    fecha = datetime.strptime(data, '<%d/%m/%y-%H:%Mh>')
+    try:
+        fecha = datetime.strptime(data, '<%d/%m/%y-%H:%Mh>')
+    except:
+        try:
+            fecha = datetime.strptime(data, '<%d/%m/%Y-%H:%Mh>')
+        except:
+            fecha = datetime.strptime(data, '<%d/%m/%y>')
     hoy = datetime.now()
     if fecha < hoy:
         fechafinal = Fore.RED + Style.BRIGHT + str(fecha.ctime())
