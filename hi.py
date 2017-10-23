@@ -61,7 +61,30 @@ elif sys.argv[1] == 'X':
     print('X')
 
 elif sys.argv[1] == 'ls':
-    print('ls')
+
+    temas = []
+    fhand = open(brain,'r')
+
+    for line in fhand:
+         paraules = line.split(';')
+         if paraules[0] not in temas:
+             temas.append(paraules[0])
+             temas.sort()
+    fhand.close()
+
+    for tema in temas:
+        print('\n' + Fore.CYAN + Style.BRIGHT + tema)
+        fhand = open(brain,'r')
+        for line in fhand:
+            paraules = line.split(';')
+            if paraules[0] == tema:
+                idactual = paraules[1]
+                estat = paraules[2]
+                data = paraules[3]
+                descripcion = paraules[4]
+                print(Fore.BLACK + Back.WHITE + Style.BRIGHT + idactual,'    [',estat,']     ',Fore.GREEN + data,'     ',descripcion)
+        fhand.close()
+    print(' ')
 
 else:
     print(Fore.CYAN + Style.BRIGHT + '''

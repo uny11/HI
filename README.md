@@ -8,7 +8,7 @@ Language: *Catalan* for the moment.
 Holding Ideas (o "hi") es el meu ultra-senzill GTD personal per consola (una ToDoList i molt més).
 Escrit en Python 3.x, l'objectiu es eliminar del meu cap totes les coses, feines, ideas i/o projectes actuals i futurs per ser enmagatzamats d'una forma sencilla i clara per poder ser revisa't en algun moment posterior.
 
-Alguns punts importants que ha de cumplir "hi":
+### Alguns punts importants que ha de cumplir "hi":
 - **Anotació SIMPLE i curta**
 - Ordenar per projecte o temàtica.
 - Per data.
@@ -17,5 +17,16 @@ Alguns punts importants que ha de cumplir "hi":
 - S'ha de poder consultar/actualitzar desde el PC i  móvil!
 - Pel futur: sistema de recordatoris automatic.
 
-Nota:
+### Nota:
 El projecte: http://todolist.site/ m'ha semblat un bon punt de partida.
+
+### Legenda:
+Legenda de caracters especials:
+ - '@' para personas
+ - '#' para temas/proyectos
+ - '<>' para fechas
+Pel primer argument:
+ - '+' añadir task
+ - '-' eliminar task
+ - 'fet' marcar como hecho!
+ - 'ls' listar.
