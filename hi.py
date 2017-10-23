@@ -39,18 +39,18 @@ if sys.argv[1] == '+':
         quit()
 
     tema = '#general'
-    data = ' '
+    data = '<buida>'
     descripcio = ''
 
     for paraula in sys.argv[2:]:
         if re.search('^#',paraula): tema = paraula
         if re.search('^<.+>$',paraula): data = paraula
-        descripcio = descripcio + ' ' + paraula
+        descripcio = descripcio + paraula + ' '
 
     idmax = funcions.buscar_id(tema)
     idnew = idmax + 1
     fhand = open(brain, 'a')
-    fhand.write(tema + ';' + str(idnew) + ';N;' + data + ';' + descripcio+'\n')
+    fhand.write(tema + ';' + str(idnew) + ';N;' + data + ';' + descripcio+';\n')
     fhand.close()
 
 
