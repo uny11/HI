@@ -26,3 +26,4 @@
 #basquet;21;N;<13/05/18-12:30h>; @VILABASQUET-V 	CLUB NOU BASQUET VILANOVA
 #python;1;N;<31/12/17-18:00h>;llegir llibres #python networking <31/12/2017-18:00h> ;
 #python;2;N;<31/12/17-18:00h>;llegir llibres #python machine learning <31/12/2017-18:00h> ;
+#personal;1;N;<23/10/17>;anar a veure pollets amb @ibai a la masia <23/10/17> ;
