@@ -1,12 +1,10 @@
 *Holding Ideas ( o "HI") is my ultra-simple GTD personal for console (ToDoList y much more)*
 
-Language: *Catalan* for the moment.
-
 # HI (Holding Ideas)
-## Current Status : " under construction " (en construcció)
+## Current Status : " under construction "
 
-Holding Ideas (o "hi") es el meu ultra-senzill GTD personal per consola (una ToDoList i molt més).
-Escrit en Python 3.x, l'objectiu es eliminar del meu cap totes les coses, feines, ideas i/o projectes actuals i futurs per ser enmagatzamats d'una forma sencilla i clara per poder ser revisa't en algun moment posterior.
+Holding Ideas (o "hi") is my ultra-simple GTD personal for console (ToDoList y much more).
+Write in python 3.x, the main goal is erase from my head all of things, tasks, ideas or similar to do in the future fot to be stored in a simple and clear way to be reviewed at some time later.
 
 ### Alguns punts importants que ha de cumplir "hi":
 - **Anotació SIMPLE i curta**
@@ -20,13 +18,12 @@ Escrit en Python 3.x, l'objectiu es eliminar del meu cap totes les coses, feines
 ### Nota:
 El projecte: http://todolist.site/ m'ha semblat un bon punt de partida.
 
-### Legenda:
-Legenda de caracters especials:
- - '@' para personas
- - '#' para temas/proyectos
- - '<>' para fechas
+### Legends:
+ - '@' for persons
+ - '#' for subject
+ - '<>' for date
 Pel primer argument:
- - '+' añadir task
- - '-' eliminar task
- - 'fet' marcar como hecho!
- - 'ls' listar.
+ - '+' for add task
+ - '-' for clean task
+ - 'Ok' for check
+ - 'ls' for list all.
