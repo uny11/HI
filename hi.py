@@ -14,7 +14,6 @@ import re
 import funcions
 
 brain = 'mybrain.txt'   # archivo principal per enmagatzemar-ho tot! xD
-
 init(autoreset=True)    # para reiniciar colores cada vez
 
 if len(sys.argv) < 2:
@@ -39,7 +38,7 @@ if sys.argv[1] == '+':
         quit()
 
     tema = '#general'
-    data = '<buida>'
+    data = '<cap>'
     descripcio = ''
 
     for paraula in sys.argv[2:]:
@@ -81,8 +80,9 @@ elif sys.argv[1] == 'ls':
                 idactual = paraules[1]
                 estat = paraules[2]
                 data = paraules[3]
-                descripcion = paraules[4]
-                print(Fore.BLACK + Back.WHITE + Style.BRIGHT + idactual,'    [',estat,']     ',Fore.GREEN + data,'     ',descripcion)
+                task = paraules[4]
+                printtask = funcions.print_task_incolor(task)
+                print(Fore.RED + Style.BRIGHT + idactual,'    [',estat,']     ',Fore.GREEN + data,'     ',printtask)
         fhand.close()
     print(' ')
 
