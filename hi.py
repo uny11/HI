@@ -80,17 +80,19 @@ elif sys.argv[1] == 'ls':
     fhand.close()
 
     for tema in temas:
-        print('\n' + Fore.CYAN + Style.BRIGHT + tema)
+        print('\n' + Fore.MAGENTA + Style.BRIGHT + tema)
         fhand = open(brain,'r')
         for line in fhand:
             paraules = line.split(';')
             if paraules[0] == tema:
                 idactual = paraules[1]
                 estat = paraules[2]
+                if estat == 'N': estat = Fore.RED + estat
                 data = paraules[3]
+                data = funcions.convertir_fecha(data)
                 task = paraules[4]
                 printtask = funcions.print_task_incolor(task)
-                print(Fore.YELLOW + Style.BRIGHT + idactual,'    [',estat,']     ',Fore.GREEN + data,'     ',printtask)
+                print(Fore.YELLOW + Style.BRIGHT + idactual,'    [',estat,']     ',data,'     ',printtask)
         fhand.close()
     print(' ')
 

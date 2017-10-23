@@ -2,6 +2,7 @@
 from colorama import init, Fore, Back, Style
 import sys
 import re
+from datetime import datetime
 
 brain = 'mybrain.txt'   # archivo principal per enmagatzemar-ho tot! xD
 init(autoreset=True)    # para reiniciar colores cada vez
@@ -25,8 +26,19 @@ def print_task_incolor(task):
     for word in words:
         new_word = word
         if re.search('^#',word): new_word = Fore.RED + Style.BRIGHT + word + Style.RESET_ALL
-        if re.search('^@',word): new_word = Fore.MAGENTA + Style.BRIGHT + word + Style.RESET_ALL
+        if re.search('^@',word): new_word = Fore.BLUE + Style.BRIGHT + word + Style.RESET_ALL
         if re.search('^<.+>$',word): new_word = ''
         task_in_color = task_in_color + new_word + ' '
 
     return task_in_color
+
+def convertir_fecha(data):
+    # data = <dd/mm/aa>
+    fecha = datetime.strptime(data, '<%d/%m/%y-%H:%Mh>')
+    hoy = datetime.now()
+    if fecha < hoy:
+        fechafinal = Fore.RED + Style.BRIGHT + str(fecha.ctime())
+    else:
+        fechafinal = Fore.CYAN + Style.BRIGHT + str(fecha.ctime())
+
+    return fechafinal

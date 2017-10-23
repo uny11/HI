@@ -1,26 +1,26 @@
-#upc;1;N;<25/10/17>;anar a la etseib a buscar el titulo #upc <25/10/17> ;
-#upc;2;N;<25/10/17>;revisar documentacio necesaria #upc <25/10/17> ;
-#boda;1;N;<29/10/17>;mirar nou video samedayboda #boda <29/10/17> ;
-#boda;2;N;<29/10/17>;contestar @guillem pel video samedayboda #boda <29/10/17> ;
-#boda;3;N;<29/10/17>;triar fotos @nouenfoc per album #boda <29/10/17> ;
-#basquet;1;N;<25/10/17-22h>;entreno normal #basquet <25/10/17-22h> ;
-#basquet;2;N;<29/10/2017-12:30h>; @VILABASQUET-V 	TALLER GONZALEZ CB CUBELLES
-#basquet;3;N;<04/11/2017-16:00h>; C.B. BEGUES @VILABASQUET-V
-#basquet;4;N;<12/11/2017-12:30h>; @VILABASQUET-V 	C.B. ROQUETES B
-#basquet;5;N;<19/11/2017-19:00h>; C.B. MASQUEFA @VILABASQUET-V
-#basquet;6;N;<03/12/2017-12:30h>; @VILABASQUET-V 	AE MVP CERVELLO B
-#basquet;7;N;<16/12/2017-16:15h>; B.M. VILADECANS B @VILABASQUET-V
-#basquet;8;N;<14/01/2018-12:30h>; @VILABASQUET-V 	C.B. JOVENTUT CASTELLDEFELS
-#basquet;9;N;<20/01/2018-18:00h>; CLUB NOU BASQUET VILANOVA @VILABASQUET-V
-#basquet;10;N;<04/02/2018-17:30h>; JOVENTUT SANT VICENÇ @VILABASQUET-V
-#basquet;11;N;<11/02/2018-12:30h>; @VILABASQUET-V 	AEB LA PALMA LAYRET FOUNDATION
-#basquet;12;N;<17/02/2018-20:00h>; C.B. MONTPEDROS B @VILABASQUET-V
-#basquet;13;N;<25/02/2018-12:30h>; @VILABASQUET-V 	C.E.B EL PAPIOL B
-#basquet;14;N;<04/03/2018-19:00h>; TALLER GONZALEZ CB CUBELLES @VILABASQUET-V
-#basquet;15;N;<11/03/2018-12:30h>; @VILABASQUET-V 	C.B. BEGUES
-#basquet;16;N;<17/03/2018-19:30h>; C.B. ROQUETES B @VILABASQUET-V
-#basquet;17;N;<25/03/2018-12:30h>; @VILABASQUET-V 	C.B. MASQUEFA
-#basquet;18;N;<15/04/2018-12:30h>; AE MVP CERVELLO B @VILABASQUET-V
-#basquet;19;N;<22/04/2018-12:30h>; @VILABASQUET-V 	B.M. VILADECANS B
-#basquet;20;N;<06/05/2018-12:30h>; C.B. JOVENTUT CASTELLDEFELS @VILABASQUET-V
-#basquet;21;N;<13/05/2018-12:30h>; @VILABASQUET-V 	CLUB NOU BASQUET VILANOVA
+#upc;1;N;<25/10/17-00:00h>;anar a la etseib a buscar el titulo #upc <25/10/17> ;
+#upc;2;N;<25/10/17-00:00h>;revisar documentacio necesaria #upc <25/10/17> ;
+#boda;1;N;<29/10/17-00:00h>;mirar nou video samedayboda #boda <29/10/17> ;
+#boda;2;N;<29/10/17-00:00h>;contestar @guillem pel video samedayboda #boda <29/10/17> ;
+#boda;3;N;<29/10/17-00:00h>;triar fotos @nouenfoc per album #boda <29/10/17> ;
+#basquet;1;N;<25/10/17-22:00h>;entreno normal #basquet <25/10/17-22h> ;
+#basquet;2;N;<29/10/17-12:30h>; @VILABASQUET-V 	TALLER GONZALEZ CB CUBELLES
+#basquet;3;N;<04/11/17-16:00h>; C.B. BEGUES @VILABASQUET-V
+#basquet;4;N;<12/11/17-12:30h>; @VILABASQUET-V 	C.B. ROQUETES B
+#basquet;5;N;<19/11/17-19:00h>; C.B. MASQUEFA @VILABASQUET-V
+#basquet;6;N;<03/12/17-12:30h>; @VILABASQUET-V 	AE MVP CERVELLO B
+#basquet;7;N;<16/12/17-16:15h>; B.M. VILADECANS B @VILABASQUET-V
+#basquet;8;N;<14/01/18-12:30h>; @VILABASQUET-V 	C.B. JOVENTUT CASTELLDEFELS
+#basquet;9;N;<20/01/18-18:00h>; CLUB NOU BASQUET VILANOVA @VILABASQUET-V
+#basquet;10;N;<04/02/18-17:30h>; JOVENTUT SANT VICENÇ @VILABASQUET-V
+#basquet;11;N;<11/02/18-12:30h>; @VILABASQUET-V 	AEB LA PALMA LAYRET FOUNDATION
+#basquet;12;N;<17/02/18-20:00h>; C.B. MONTPEDROS B @VILABASQUET-V
+#basquet;13;N;<25/02/18-12:30h>; @VILABASQUET-V 	C.E.B EL PAPIOL B
+#basquet;14;N;<04/03/18-19:00h>; TALLER GONZALEZ CB CUBELLES @VILABASQUET-V
+#basquet;15;N;<11/03/18-12:30h>; @VILABASQUET-V 	C.B. BEGUES
+#basquet;16;N;<17/03/18-19:30h>; C.B. ROQUETES B @VILABASQUET-V
+#basquet;17;N;<25/03/18-12:30h>; @VILABASQUET-V 	C.B. MASQUEFA
+#basquet;18;N;<15/04/18-12:30h>; AE MVP CERVELLO B @VILABASQUET-V
+#basquet;19;N;<22/04/18-12:30h>; @VILABASQUET-V 	B.M. VILADECANS B
+#basquet;20;N;<06/05/18-12:30h>; C.B. JOVENTUT CASTELLDEFELS @VILABASQUET-V
+#basquet;21;N;<13/05/18-12:30h>; @VILABASQUET-V 	CLUB NOU BASQUET VILANOVA
