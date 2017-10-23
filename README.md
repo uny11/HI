@@ -18,11 +18,12 @@ It's a good first point to start.
 
 ### Legends:
 **Notation:**
- - '@' for persons
- - '#' for subject
- - '<>' for date
+ - '@' for persons.
+ - '#' for subject.
+ - '<>' for date.
+
 **First argument:**
- - '+' for add task
- - '-' for clean task
- - 'Ok' for check
+ - '+' for add task.
+ - '-' for clean task.
+ - 'Ok' for check.
  - 'ls' for list all.
