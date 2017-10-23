@@ -1,12 +1,3 @@
-# Leyenda de caracteres especiales:
-# '@' para personas
-# '#' para temas/proyectos
-# '<>' para fechas
-# Para el primer argumento:
-#   - '+' añadir task
-#   - '-' eliminar task
-#   - 'fet' marcar como hecho!
-#   - 'ls' listar.
 
 from colorama import init, Fore, Back, Style
 import sys
