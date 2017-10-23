@@ -1,7 +1,7 @@
 # Leyenda de caracteres especiales:
 # '@' para personas
 # '#' para temas/proyectos
-# '[]' para fechas
+# '<>' para fechas
 # Para el primer argumento:
 #   - '+' añadir task
 #   - '-' eliminar task
@@ -11,8 +11,9 @@
 from colorama import init, Fore, Back, Style
 import sys
 import re
+import funcions
 
-brain = 'mybrain.txt'   # archivo principal para holding ideas! xD
+brain = 'mybrain.txt'   # archivo principal per enmagatzemar-ho tot! xD
 
 init(autoreset=True)    # para reiniciar colores cada vez
 
@@ -28,11 +29,30 @@ if len(sys.argv) < 2:
     paraules especials:
         - '@' per persones
         - '#' per temes/projectes
-        - '[]' per dates\n''')
+        - '<>' per dates\n''')
     quit()
 
 if sys.argv[1] == '+':
-    print('+')
+
+    if len(sys.argv) == 2:
+        print(Fore.RED + '\nla tasca a afegir esta buida :S\n')
+        quit()
+
+    tema = '#general'
+    data = ' '
+    descripcio = ''
+
+    for paraula in sys.argv[2:]:
+        if re.search('^#',paraula): tema = paraula
+        if re.search('^<.+>$',paraula): data = paraula
+        descripcio = descripcio + ' ' + paraula
+
+    idmax = funcions.buscar_id(tema)
+    idnew = idmax + 1
+    fhand = open(brain, 'a')
+    fhand.write(tema + ';' + str(idnew) + ';N;' + data + ';' + descripcio+'\n')
+    fhand.close()
+
 
 elif sys.argv[1] == '-':
     print('-')
