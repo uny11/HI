@@ -59,6 +59,14 @@ elif sys.argv[1] == '-':
 elif sys.argv[1] == 'X':
     print('X')
 
+elif sys.argv[1] == 'init':
+    print('Estas seguro en reiniciar "mybrain.txt"?')
+    op = input('(s/n por defecto "n" >> ')
+    if op == 's' or op == 'S':
+        fhand = open(brain,'w')
+        fhand.close()
+    print('Ok, mejor en otro momento')
+
 elif sys.argv[1] == 'ls':
 
     temas = []
@@ -82,7 +90,7 @@ elif sys.argv[1] == 'ls':
                 data = paraules[3]
                 task = paraules[4]
                 printtask = funcions.print_task_incolor(task)
-                print(Fore.RED + Style.BRIGHT + idactual,'    [',estat,']     ',Fore.GREEN + data,'     ',printtask)
+                print(Fore.YELLOW + Style.BRIGHT + idactual,'    [',estat,']     ',Fore.GREEN + data,'     ',printtask)
         fhand.close()
     print(' ')
 
