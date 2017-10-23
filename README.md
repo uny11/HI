@@ -1,22 +1,21 @@
 *Holding Ideas ( o "HI") is my ultra-simple GTD personal for console (ToDoList y much more)*
 
-Language: *Spanish* for the moment.
+Language: *Catalan* for the moment.
 
 # HI (Holding Ideas)
-## Current Status : " under construction " (bajo contrucción)
+## Current Status : " under construction " (en construcció)
 
-Holding Ideas ( o "HI") es mi ultra-simple GTD personal para consola (ToDoList y mucho más).
-Escruto en Python 3.x, el objetivo es eliminar de mi mente todo tipo de cosas/tareas, ideas y/o proyectos actuales y futuros para ser almacenados de forma simple y clara para poder ser revisado en algun momento.
+Holding Ideas (o "hi") es el meu ultra-senzill GTD personal per consola (una ToDoList i molt més).
+Escrit en Python 3.x, l'objectiu es eliminar del meu cap totes les coses, feines, ideas i/o projectes actuals i futurs per ser enmagatzamats d'una forma sencilla i clara per poder ser revisa't en algun moment posterior.
 
-Algunos puntos que debe cumplir HI (o hi):
-- **Anotación SIMPLE y corta**
-- Ordenar por proyectos o tematica.
-- Por fechas
-- Por personas
-- Por tags
-- Usar colores para ayudar a la comprension
-- Se debe poder consultar/actualizar desde cualquier PC y movil!
-- Opcional para el futuro: Sistema de recordatorios automatico y/o semi-automatico.
+Alguns punts importants que ha de cumplir "hi":
+- **Anotació SIMPLE i curta**
+- Ordenar per projecte o temàtica.
+- Per data.
+- Per persona.
+- Fer servir colors per ajudar a la comprensió ràpida!
+- S'ha de poder consultar/actualitzar desde el PC i  móvil!
+- Pel futur: sistema de recordatoris automatic.
 
 Nota:
-  - Me gusta este: http://todolist.site/ interesante combinacion de colores por consola para basar el proyecto!
+El projecte: http://todolist.site/ m'ha semblat un bon punt de partida.
