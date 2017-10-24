@@ -9,7 +9,7 @@ brain = 'mybrain.txt'   # archivo principal per enmagatzemar-ho tot! xD
 init(autoreset=True)    # para reiniciar colores cada vez
 
 if len(sys.argv) < 2:
-    print(Fore.CYAN + Style.BRIGHT + '\nque volies fer alguna cosa?')
+    print(Fore.RED + Style.BRIGHT + '\nque volies fer alguna cosa?')
     print('''
     python hi.py [opcio] 'descripcio de la tasca'
     opcions:
@@ -26,7 +26,7 @@ if len(sys.argv) < 2:
 if sys.argv[1] == '+':
 
     if len(sys.argv) == 2:
-        print(Fore.RED + '\nla tasca a afegir esta buida :S\n')
+        print(Fore.RED + Style.BRIGHT + '\nla tasca a afegir esta buida :S\n')
         quit()
 
     tema = '#personal'
@@ -37,7 +37,6 @@ if sys.argv[1] == '+':
         if re.search('^#',paraula): tema = paraula
         if re.search('^<.+>$',paraula):
             data = paraula
-            print(paraula)
             try:
                 test = datetime.strptime(paraula, '<%d/%m/%y-%H:%Mh>')
             except:
@@ -65,8 +64,45 @@ if sys.argv[1] == '+':
 elif sys.argv[1] == '-':
     print('-')
 
-elif sys.argv[1] == 'X':
-    print('X')
+elif sys.argv[1] == 'ok':
+
+    if len(sys.argv) < 4:
+        print(Fore.RED + Style.BRIGHT + '\nquina tasca/tema vols marcar?\n','python hi.py ok [tema] [idtasca]\n')
+        quit()
+
+    tema = sys.argv[2]
+    idtasca = sys.argv[3]
+    fhand = open(brain,'r+')
+    sopa = fhand.read()
+    textorigen = '#'+tema+';'+idtasca+';N;'
+    textfinal = '#'+tema+';'+idtasca+';OK;'
+    sopa = sopa.replace(textorigen,textfinal)
+    textorigen = tema+';'+idtasca+';N;'
+    textfinal = tema+';'+idtasca+';OK;'
+    sopa = sopa.replace(textorigen,textfinal)
+    fhand.seek(0)
+    fhand.write(sopa)
+    fhand.close()
+
+elif sys.argv[1] == 'N':
+
+    if len(sys.argv) < 4:
+        print(Fore.RED + Style.BRIGHT + '\nquina tasca/tema vols desmarcar?\n','python hi.py N [tema] [idtasca]\n')
+        quit()
+
+    tema = sys.argv[2]
+    idtasca = sys.argv[3]
+    fhand = open(brain,'r+')
+    sopa = fhand.read()
+    textorigen = '#'+tema+';'+idtasca+';OK;'
+    textfinal = '#'+tema+';'+idtasca+';N;'
+    sopa = sopa.replace(textorigen,textfinal)
+    textorigen = tema+';'+idtasca+';OK;'
+    textfinal = tema+';'+idtasca+';N;'
+    sopa = sopa.replace(textorigen,textfinal)
+    fhand.seek(0)
+    fhand.write(sopa)
+    fhand.close()
 
 elif sys.argv[1] == 'init':
     print('Estas seguro en reiniciar "mybrain.txt"?')
@@ -85,7 +121,7 @@ elif sys.argv[1] == 'ls':
          paraules = line.split(';')
          if paraules[0] not in temas:
              temas.append(paraules[0])
-             temas.sort()
+             temas.sort(reverse=True)
     fhand.close()
 
     for tema in temas:
