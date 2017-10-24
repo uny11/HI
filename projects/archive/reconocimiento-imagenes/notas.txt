@@ -1,0 +1,6 @@
+
+NOTAS
+
+24/10/2017
+ - proyecto interesante con multiples aplicaciones -> Darknet con YOLO para reconocimiento de objetos de imagenes y video!
+ - un ejemplo de aplicacion es la "Memoria aumentada" con reconocimiento facial.

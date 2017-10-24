@@ -1,0 +1,41 @@
+#upc;1;N;<25/10/17-00:00h>;anar a la etseib a buscar el titol #upc <25/10/17> ;
+#upc;2;N;<25/10/17-00:00h>;revisar documentacio necesaria #upc <25/10/17> ;
+#boda;1;N;<29/10/17-00:00h>;mirar nou video samedayboda #boda <29/10/17> ;
+#boda;2;N;<29/10/17-00:00h>;contestar @guillem pel video samedayboda #boda <29/10/17> ;
+#boda;3;N;<29/10/17-00:00h>;triar fotos @nouenfoc per album #boda <29/10/17> ;
+#basquet;1;N;<25/10/17-22:00h>;entreno normal #basquet <25/10/17-22h> ;
+#basquet;2;N;<29/10/17-12:30h>; @VILABASQUET-V 	TALLER GONZALEZ CB CUBELLES
+#basquet;3;N;<04/11/17-16:00h>; C.B. BEGUES @VILABASQUET-V
+#basquet;4;N;<12/11/17-12:30h>; @VILABASQUET-V 	C.B. ROQUETES B
+#basquet;5;N;<19/11/17-19:00h>; C.B. MASQUEFA @VILABASQUET-V
+#basquet;6;N;<03/12/17-12:30h>; @VILABASQUET-V 	AE MVP CERVELLO B
+#basquet;7;N;<16/12/17-16:15h>; B.M. VILADECANS B @VILABASQUET-V
+#basquet;8;N;<14/01/18-12:30h>; @VILABASQUET-V 	C.B. JOVENTUT CASTELLDEFELS
+#basquet;9;N;<20/01/18-18:00h>; CLUB NOU BASQUET VILANOVA @VILABASQUET-V
+#basquet;10;N;<04/02/18-17:30h>; JOVENTUT SANT VICENÇ @VILABASQUET-V
+#basquet;11;N;<11/02/18-12:30h>; @VILABASQUET-V 	AEB LA PALMA LAYRET FOUNDATION
+#basquet;12;N;<17/02/18-20:00h>; C.B. MONTPEDROS B @VILABASQUET-V
+#basquet;13;N;<25/02/18-12:30h>; @VILABASQUET-V 	C.E.B EL PAPIOL B
+#basquet;14;N;<04/03/18-19:00h>; TALLER GONZALEZ CB CUBELLES @VILABASQUET-V
+#basquet;15;N;<11/03/18-12:30h>; @VILABASQUET-V 	C.B. BEGUES
+#basquet;16;N;<17/03/18-19:30h>; C.B. ROQUETES B @VILABASQUET-V
+#basquet;17;N;<25/03/18-12:30h>; @VILABASQUET-V 	C.B. MASQUEFA
+#basquet;18;N;<15/04/18-12:30h>; AE MVP CERVELLO B @VILABASQUET-V
+#basquet;19;N;<22/04/18-12:30h>; @VILABASQUET-V 	B.M. VILADECANS B
+#basquet;20;N;<06/05/18-12:30h>; C.B. JOVENTUT CASTELLDEFELS @VILABASQUET-V
+#basquet;21;N;<13/05/18-12:30h>; @VILABASQUET-V 	CLUB NOU BASQUET VILANOVA
+#python;1;N;<31/12/17-18:00h>;llegir llibres #python networking <31/12/2017-18:00h> ;
+#python;2;N;<31/12/17-18:00h>;llegir llibres #python machine learning <31/12/2017-18:00h> ;
+#cotxe;1;N;<27/06/1982-13:00h>;#cotxe canviar la llum de cruce anar @peugeout ;
+#bigdata;1;N;<01/11/17>;crear revisio de estadisticas de SE #bigdata <01/11/17> ;
+#bigdata;2;N;<15/11/17>;#bigdata escriure wiki-readme a mode de manual de usuari <15/11/17> ;
+#bigdata;3;N;<15/11/17>;#bigdata comentar en forum hattrick la nueva app para feedback <15/11/17> ;
+#bigdata;4;N;<15/11/17>;#bigdata crear script para unificar bbdd bajadas de gmail <15/11/17> ;
+#linux;1;N;<31/12/17>;@thefuck revisar aquest projecte per consola https://github.com/nvbn/thefuck <31/12/17> per #linux ;
+#personal;2;N;<25/10/17>;buscar programa per la @laia per veure fotos al pc <25/10/17> ;
+#upc;3;N;<01/11/17>;mirar info de #upc Alumni <01/11/17> ;
+#myserver;1;N;<31/12/17>;crear un servidor personal en casa #myserver <31/12/17> ;
+#trabajo;1;N;<28/02/18>;actualizar CV para buscar nuevo #trabajo <28/02/18> ;
+#trabajo;2;N;<28/02/18>;actualizar LinkedIn para buscar nuevo #trabajo <28/02/18> ;
+#personal;3;N;<27/06/1982-13:00h>;arreglar porter automatic pis @girada ;
+#personal;4;N;<27/06/1982-13:00h>;arreglar porta del despatx pis @girada ;

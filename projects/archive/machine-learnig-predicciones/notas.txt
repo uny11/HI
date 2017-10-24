@@ -1,0 +1,6 @@
+
+NOTAS
+
+24/10/2017
+ - Leer libros de python de machine learning
+  -Revisar-ayudar o crear un proyecto de "machine learning" o prediciones.

@@ -1,0 +1,10 @@
+
+NOTAS
+24/10/2017
+- Ejemplo de configuración interesante "https://github.com/drduh/Debian-Privacy-Server-Guide".
+- Guia basica para server de Arch-Linux "https://wiki.archlinux.org/index.php/Server".
+- Para compartir fotos y videos personales con tu propia nube de datos.
+- Media Center para ver televisión o peliculas si esta conectado al televisor.
+- PC Antiguo para niños y aprender a programar.
+- Alojamiento para tu propia web!
+- Verificar resultados de basquetcatala.com
