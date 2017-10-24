@@ -2,11 +2,13 @@
 from colorama import init, Fore, Back, Style
 import sys
 import re
-import funcions
 from datetime import datetime
+import funcions # funciones del programa
 
-brain = 'mybrain.txt'   # archivo principal per enmagatzemar-ho tot! xD
-init(autoreset=True)    # para reiniciar colores cada vez
+brain = 'mybrain.txt'   # archivo principal
+archive = 'myarchive.txt'   # archivo para guardar tareas eliminadas
+
+init(autoreset=True)
 
 if len(sys.argv) < 2:
     print(Fore.RED + Style.BRIGHT + '\nque volies fer alguna cosa?')
@@ -124,27 +126,61 @@ elif sys.argv[1] == 'ls':
              temas.sort(reverse=True)
     fhand.close()
 
-    for tema in temas:
-        print('\n' + Fore.GREEN + Style.BRIGHT + tema)
-        fhand = open(brain,'r')
-        for line in fhand:
-            paraules = line.split(';')
-            if paraules[0] == tema:
-                idactual = paraules[1]
-                estat = paraules[2]
-                if estat == 'N': estat = Fore.RED + estat
-                data = paraules[3]
-                data = funcions.convertir_fecha(data)
-                task = paraules[4]
-                printtask = funcions.print_task_incolor(task)
-                print(Fore.YELLOW + Style.BRIGHT + idactual,'    [',estat,']     ',data,'     ',printtask)
-        fhand.close()
-    print(' ')
+    try:
+        subject = sys.argv[2]
+        for tema in temas:
+            if tema == subject or tema == '#'+subject:
+                print('\n' + Fore.GREEN + Style.BRIGHT + tema)
+            fhand = open(brain,'r')
+            for line in fhand:
+                if re.search('^#'+subject,line):
+                    paraules = line.split(';')
+                    if paraules[0] == tema:
+                        idactual = paraules[1]
+                        estat = paraules[2]
+                        if estat == 'N': estat = Fore.RED + estat
+                        data = paraules[3]
+                        data = funcions.convertir_fecha(data)
+                        task = paraules[4]
+                        printtask = funcions.print_task_incolor(task)
+                        print(Fore.YELLOW + Style.BRIGHT + idactual,'    [',estat,']     ',data,'     ',printtask)
+                if re.search('^'+subject,line):
+                    paraules = line.split(';')
+                    if paraules[0] == tema:
+                        idactual = paraules[1]
+                        estat = paraules[2]
+                        if estat == 'N': estat = Fore.RED + estat
+                        data = paraules[3]
+                        data = funcions.convertir_fecha(data)
+                        task = paraules[4]
+                        printtask = funcions.print_task_incolor(task)
+                        print(Fore.YELLOW + Style.BRIGHT + idactual,'    [',estat,']     ',data,'     ',printtask)
+            fhand.close()
+        print(' ')
+
+    except:
+        for tema in temas:
+            print('\n' + Fore.GREEN + Style.BRIGHT + tema)
+            fhand = open(brain,'r')
+            for line in fhand:
+                paraules = line.split(';')
+                if paraules[0] == tema:
+                    idactual = paraules[1]
+                    estat = paraules[2]
+                    if estat == 'N': estat = Fore.RED + estat
+                    data = paraules[3]
+                    data = funcions.convertir_fecha(data)
+                    task = paraules[4]
+                    printtask = funcions.print_task_incolor(task)
+                    print(Fore.YELLOW + Style.BRIGHT + idactual,'    [',estat,']     ',data,'     ',printtask)
+            fhand.close()
+        print(' ')
 
 else:
     print(Fore.CYAN + Style.BRIGHT + '''
-    \nperdona, que vols fer? recorda que la primera paraula ha de ser:
+    \hola, que vols fer? recorda que la primera paraula ha de ser:
             - '+' añadir task
             - '-' eliminar task
-            - 'X' marcar como hecho!
+            - 'ok' marcar com fet!
+            - 'N' per desmarcar com fet
             - 'ls' verificar el meu magatzem d'ideas\n''')

@@ -33,4 +33,3 @@
 #bigdata;3;N;<15/11/17>;#bigdata comentar en forum hattrick la nueva app para feedback <15/11/17> ;
 #bigdata;4;N;<15/11/17>;#bigdata crear script para unificar bbdd bajadas de gmail <15/11/17> ;
 #thefuck;1;N;<31/12/17>;#thefuck revisar aquest projecte per consola https://github.com/nvbn/thefuck <31/12/17> ;
-
