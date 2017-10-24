@@ -172,9 +172,10 @@ elif sys.argv[1] == 'ls':
 
     for line in fhand:
          paraules = line.split(';')
-         if paraules[0] not in temas:
-             temas.append(paraules[0])
-             temas.sort(reverse=True)
+         if paraules[0] != '\n':
+             if paraules[0] not in temas:
+                 temas.append(paraules[0])
+                 temas.sort(reverse=True)
     fhand.close()
 
     try:
