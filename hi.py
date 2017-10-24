@@ -64,7 +64,35 @@ if sys.argv[1] == '+':
 
 
 elif sys.argv[1] == '-':
-    print('-')
+
+    if len(sys.argv) < 4:
+        print(Fore.RED + Style.BRIGHT + '\nquina tasca/tema vols archivar?\n','python hi.py - [tema] [idtasca]\n')
+        quit()
+
+    tema = sys.argv[2]
+    idtasca = sys.argv[3]
+
+    tasca = '^#'+tema+';'+idtasca+';'
+    delline = ''
+
+    fhand = open(brain,'r')
+    for line in fhand:
+        if re.search(tasca, line):
+            delline = line
+
+    if delline == '': quit()
+    fhand.seek(0)
+    sopa = fhand.read()
+    sopa = sopa.replace(delline,'')
+    fhand.close()
+    fhand = open(brain,'w')
+    fhand.write(sopa)
+    fhand.close()
+
+    fhand2 = open(archive,'a')
+    fhand2.write(delline)
+    fhand2.close()
+
 
 elif sys.argv[1] == 'ok':
 
@@ -107,12 +135,35 @@ elif sys.argv[1] == 'N':
     fhand.close()
 
 elif sys.argv[1] == 'init':
-    print('Estas seguro en reiniciar "mybrain.txt"?')
-    op = input('(s/n por defecto "n" >> ')
-    if op == 's' or op == 'S':
-        fhand = open(brain,'w')
-        fhand.close()
-    print('Ok, mejor en otro momento')
+
+    if len(sys.argv) == 3:
+        opcion = sys.argv[2]
+        if opcion == 'a':
+            print(Fore.CYAN + Style.BRIGHT + '\nEstas seguro en reiniciar "myarchive.txt"?')
+            op = input('(s/n por defecto "n" >> ')
+            if op == 's' or op == 'S':
+                fhand = open(archive,'w')
+                fhand.close()
+                print(Fore.GREEN + Style.BRIGHT + '"myarchive.txt" ha estat re-iniciat!\n')
+                quit()
+            else:
+                print('Ok, mejor en otro momento')
+                quit()
+    elif len(sys.argv) == 2:
+        print(Fore.CYAN + Style.BRIGHT + '\nEstas seguro en reiniciar "mybrain.txt"?')
+        op = input('(s/n por defecto "n" >> ')
+        if op == 's' or op == 'S':
+            fhand = open(brain,'w')
+            fhand.close()
+            print(Fore.GREEN + Style.BRIGHT + '"mybrain.txt" ha estat re-iniciat!\n')
+            quit()
+        else:
+            print('Ok, mejor en otro momento')
+            quit()
+
+    print(Fore.RED + Style.BRIGHT + '\nque vols re-iniciar?\n','python hi.py init [opcional=a]\n')
+    quit()
+
 
 elif sys.argv[1] == 'ls':
 
@@ -179,8 +230,9 @@ elif sys.argv[1] == 'ls':
 else:
     print(Fore.CYAN + Style.BRIGHT + '''
     \hola, que vols fer? recorda que la primera paraula ha de ser:
-            - '+' añadir task
-            - '-' eliminar task
+            - 'init' per re-iniciar el magatzem de ideas
+            - '+' afegir tasca/idea
+            - '-' eliminar tasca/idea
             - 'ok' marcar com fet!
-            - 'N' per desmarcar com fet
-            - 'ls' verificar el meu magatzem d'ideas\n''')
+            - 'N' per desmarcar de fet a no fet
+            - 'ls' veure el meu magatzem d'ideas\n''')
