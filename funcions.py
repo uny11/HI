@@ -26,7 +26,7 @@ def print_task_incolor(task):
     for word in words:
         new_word = word
         if re.search('^#',word): new_word = Fore.RED + Style.BRIGHT + word + Style.RESET_ALL
-        if re.search('^@',word): new_word = Fore.BLUE + Style.BRIGHT + word + Style.RESET_ALL
+        if re.search('^@',word): new_word = Fore.MAGENTA + Style.BRIGHT + word + Style.RESET_ALL
         if re.search('^<.+>$',word): new_word = ''
         task_in_color = task_in_color + new_word + ' '
 
