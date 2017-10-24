@@ -32,7 +32,6 @@
 #bigdata;3;N;<15/11/17>;#bigdata comentar en forum hattrick la nueva app para feedback <15/11/17> ;
 #bigdata;4;N;<15/11/17>;#bigdata crear script para unificar bbdd bajadas de gmail <15/11/17> ;
 #linux;1;N;<31/12/17>;@thefuck revisar aquest projecte per consola https://github.com/nvbn/thefuck <31/12/17> per #linux ;
-#personal;2;N;<25/10/17>;buscar programa per la @laia per veure fotos al pc <25/10/17> ;
 #upc;3;N;<01/11/17>;mirar info de #upc Alumni <01/11/17> ;
 #myserver;1;N;<31/12/17>;crear un servidor personal en casa #myserver <31/12/17> ;
 #trabajo;1;N;<28/02/18>;actualizar CV para buscar nuevo #trabajo <28/02/18> ;
