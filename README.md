@@ -17,27 +17,27 @@ Write in python 3.x, the main goal is erase from my head all tasks to do and wot
 ### How to use
 - Reboot (or start) your tasks files:
 
-      *python hi.py init*
+      _python hi.py init_
 
 - Add a task (argument = "+"):
 
-      *python hi.py + this is my first task for @me #test <27/10/17>*
+      _python hi.py + this is my first task for @me #test <27/10/17>_
 
 - List the current task (argument "ls" This is the most important thing! in program):
 
-      *python hi.py ls*
+      _python hi.py ls_
 
 - check a task due with argument "ok":
 
-      *python hi.py ok personal 1*
+      _python hi.py ok personal 1_
 
 - un-check a task with argument "N":
 
-      *python hi.py N personal 1*
+      _python hi.py N personal 1_
 
 - archive a task with argument "-":
 
-      *python hi.py - personal 1*
+      _python hi.py - personal 1_
 
 ![for example:](https://github.com/uny11/HI/blob/master/example.png)
 
@@ -52,15 +52,15 @@ Write in python 3.x, the main goal is erase from my head all tasks to do and wot
 
 - In linux, add this in your ~/.bashrc file:
 
-      *alias hi = python hi.py*
+      _alias hi = python hi.py_
 
 - In windows powershell, add this in your profile:
 
-      *function hi {python hi.py $args}*
+      _function hi {python hi.py $args}_
 
-Now it's possible to do:
+- Now it's possible to do:
 
-      *hi ls*
+      _hi ls_
 
 
 
