@@ -4,3 +4,4 @@
 #personal;5;OK;<25/10/17>;mirar ultim dia @bili i fixar data <25/10/17> ;
 #boda;1;OK;<29/10/17-00:00h>;mirar nou video samedayboda #boda <29/10/17> ;
 #myserver;1;N;<31/12/17>;crear un servidor personal en casa #myserver <31/12/17> ;
+#hi;1;OK;<27/06/1982-13:00h>;#hi modificar formato de fechas y añadir contador ;

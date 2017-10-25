@@ -1,6 +1,7 @@
 
 # HI (Holding Ideas)
 ## Current Status : Active
+## Current Version : v0.1.2
 
 Holding Ideas (o "hi") is my ultra-simple ToDoList for console.
 Write in python 3.x, the main goal is erase from my head all tasks to do and wotk about other things.
