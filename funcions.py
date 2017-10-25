@@ -43,8 +43,14 @@ def convertir_fecha(data):
             fecha = datetime.strptime(data, '<%d/%m/%y>')
     hoy = datetime.now()
     if fecha < hoy:
-        fechafinal = Fore.RED + Style.BRIGHT + str(fecha.ctime())
+        # in format ctime
+        # fechafinal = Fore.RED + Style.BRIGHT + str(fecha.ctime())
+        fechaf = fecha.strftime('%a %d%b%y %H:%Mh')
+        fechafinal = Fore.RED + Style.BRIGHT + fechaf
     else:
-        fechafinal = Fore.CYAN + Style.BRIGHT + str(fecha.ctime())
+        # in format ctime
+        # fechafinal = Fore.CYAN + Style.BRIGHT + str(fecha.ctime())
+        fechaf = fecha.strftime('%a %d%b%y %H:%Mh')
+        fechafinal = Fore.CYAN + Style.BRIGHT + fechaf
 
     return fechafinal
