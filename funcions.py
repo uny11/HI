@@ -54,3 +54,17 @@ def convertir_fecha(data):
         fechafinal = Fore.CYAN + Style.BRIGHT + fechaf
 
     return fechafinal
+
+def dif_fecha(data):
+    # data = <dd/mm/aa>
+    try:
+        fecha = datetime.strptime(data, '<%d/%m/%y-%H:%Mh>')
+    except:
+        try:
+            fecha = datetime.strptime(data, '<%d/%m/%Y-%H:%Mh>')
+        except:
+            fecha = datetime.strptime(data, '<%d/%m/%y>')
+    hoy = datetime.now()
+    diferencia = fecha - hoy
+
+    return diferencia.days

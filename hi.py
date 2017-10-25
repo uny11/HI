@@ -185,10 +185,11 @@ elif sys.argv[1] == 'ls':
                         estat = paraules[2]
                         if estat == 'N': estat = Fore.RED + estat
                         data = paraules[3]
-                        data = funcions.convertir_fecha(data)
+                        datap = funcions.convertir_fecha(data)
+                        difp = funcions.dif_fecha(data)
                         task = paraules[4]
                         printtask = funcions.print_task_incolor(task)
-                        print(Fore.YELLOW + Style.BRIGHT + idactual,'    [',estat,']     ',data,'     ',printtask)
+                        print(Fore.YELLOW + Style.BRIGHT + idactual,'    [',estat,']   ',difp,' ',datap,'     ',printtask)
                 if re.search('^'+subject,line):
                     paraules = line.split(';')
                     if paraules[0] == tema:
@@ -196,10 +197,11 @@ elif sys.argv[1] == 'ls':
                         estat = paraules[2]
                         if estat == 'N': estat = Fore.RED + estat
                         data = paraules[3]
-                        data = funcions.convertir_fecha(data)
+                        datap = funcions.convertir_fecha(data)
+                        difp = funcions.dif_fecha(data)
                         task = paraules[4]
                         printtask = funcions.print_task_incolor(task)
-                        print(Fore.YELLOW + Style.BRIGHT + idactual,'    [',estat,']     ',data,'     ',printtask)
+                        print(Fore.YELLOW + Style.BRIGHT + idactual,'    [',estat,']   ',difp,' ',datap,'     ',printtask)
             fhand.close()
         print(' ')
 
@@ -214,10 +216,11 @@ elif sys.argv[1] == 'ls':
                     estat = paraules[2]
                     if estat == 'N': estat = Fore.RED + estat
                     data = paraules[3]
-                    data = funcions.convertir_fecha(data)
+                    datap = funcions.convertir_fecha(data)
+                    difp = funcions.dif_fecha(data)
                     task = paraules[4]
                     printtask = funcions.print_task_incolor(task)
-                    print(Fore.YELLOW + Style.BRIGHT + idactual,'    [',estat,']     ',data,'     ',printtask)
+                    print(Fore.YELLOW + Style.BRIGHT + idactual,'    [',estat,']   ',difp,' ',datap,'     ',printtask)
             fhand.close()
         print(' ')
 
