@@ -1,6 +1,0 @@
-#personal;1;OK;<23/10/17>;anar a veure pollets amb @ibai a la masia <23/10/17> ;
-#basquet;22;OK;<24/10/17>;pagar @vilabasquet <24/10/17> ;
-#personal;2;OK;<25/10/17>;buscar programa per la @laia per veure fotos al pc <25/10/17> ;
-#personal;5;OK;<25/10/17>;mirar ultim dia @bili i fixar data <25/10/17> ;
-#boda;1;OK;<29/10/17-00:00h>;mirar nou video samedayboda #boda <29/10/17> ;
-#myserver;1;N;<31/12/17>;crear un servidor personal en casa #myserver <31/12/17> ;
