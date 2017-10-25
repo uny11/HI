@@ -60,10 +60,14 @@ if sys.argv[1] == '+':
 
     idmax = funcions.buscar_id(tema)
     idnew = idmax + 1
-    fhand = open(brain, 'a')
-    fhand.write(tema + ';' + str(idnew) + ';N;' + data + ';' + descripcio+';\n')
-    fhand.close()
-
+    try:
+        fhand = open(brain, 'a')
+        fhand.write(tema + ';' + str(idnew) + ';N;' + data + ';' + descripcio+';\n')
+        fhand.close()
+    except:
+        fhand = open(brain, 'w')
+        fhand.write(tema + ';' + str(idnew) + ';N;' + data + ';' + descripcio+';\n')
+        fhand.close()
 
 elif sys.argv[1] == '-':
 
@@ -77,10 +81,13 @@ elif sys.argv[1] == '-':
     tasca = '^#'+tema+';'+idtasca+';'
     delline = ''
 
-    fhand = open(brain,'r')
-    for line in fhand:
-        if re.search(tasca, line):
-            delline = line
+    try:
+        fhand = open(brain,'r')
+        for line in fhand:
+            if re.search(tasca, line):
+                delline = line
+    except:
+        delline == ''
 
     if delline == '': sys.exit()
     fhand.seek(0)
@@ -91,9 +98,14 @@ elif sys.argv[1] == '-':
     fhand.write(sopa)
     fhand.close()
 
-    fhand2 = open(archive,'a')
-    fhand2.write(delline)
-    fhand2.close()
+    try:
+        fhand2 = open(archive,'a')
+        fhand2.write(delline)
+        fhand2.close()
+    except:
+        fhand2 = open(archive,'w')
+        fhand2.write(delline)
+        fhand2.close()
 
 
 elif sys.argv[1] == 'ok':
@@ -104,17 +116,20 @@ elif sys.argv[1] == 'ok':
 
     tema = sys.argv[2]
     idtasca = sys.argv[3]
-    fhand = open(brain,'r+')
-    sopa = fhand.read()
-    textorigen = '#'+tema+';'+idtasca+';N;'
-    textfinal = '#'+tema+';'+idtasca+';OK;'
-    sopa = sopa.replace(textorigen,textfinal)
-    textorigen = tema+';'+idtasca+';N;'
-    textfinal = tema+';'+idtasca+';OK;'
-    sopa = sopa.replace(textorigen,textfinal)
-    fhand.seek(0)
-    fhand.write(sopa)
-    fhand.close()
+    try:
+        fhand = open(brain,'r+')
+        sopa = fhand.read()
+        textorigen = '#'+tema+';'+idtasca+';N;'
+        textfinal = '#'+tema+';'+idtasca+';OK;'
+        sopa = sopa.replace(textorigen,textfinal)
+        textorigen = tema+';'+idtasca+';N;'
+        textfinal = tema+';'+idtasca+';OK;'
+        sopa = sopa.replace(textorigen,textfinal)
+        fhand.seek(0)
+        fhand.write(sopa)
+        fhand.close()
+    except:
+        sys.exit()
 
 elif sys.argv[1] == 'N':
 
@@ -124,17 +139,20 @@ elif sys.argv[1] == 'N':
 
     tema = sys.argv[2]
     idtasca = sys.argv[3]
-    fhand = open(brain,'r+')
-    sopa = fhand.read()
-    textorigen = '#'+tema+';'+idtasca+';OK;'
-    textfinal = '#'+tema+';'+idtasca+';N;'
-    sopa = sopa.replace(textorigen,textfinal)
-    textorigen = tema+';'+idtasca+';OK;'
-    textfinal = tema+';'+idtasca+';N;'
-    sopa = sopa.replace(textorigen,textfinal)
-    fhand.seek(0)
-    fhand.write(sopa)
-    fhand.close()
+    try:
+        fhand = open(brain,'r+')
+        sopa = fhand.read()
+        textorigen = '#'+tema+';'+idtasca+';OK;'
+        textfinal = '#'+tema+';'+idtasca+';N;'
+        sopa = sopa.replace(textorigen,textfinal)
+        textorigen = tema+';'+idtasca+';OK;'
+        textfinal = tema+';'+idtasca+';N;'
+        sopa = sopa.replace(textorigen,textfinal)
+        fhand.seek(0)
+        fhand.write(sopa)
+        fhand.close()
+    except:
+        sys.exit()
 
 elif sys.argv[1] == 'init':
 
@@ -161,7 +179,11 @@ elif sys.argv[1] == 'init':
 elif sys.argv[1] == 'ls':
 
     temas = []
-    fhand = open(brain,'r')
+    try:
+        fhand = open(brain,'r')
+    except:
+        print('remember, first of all, create your files task with "python hi.py init"')
+        sys.exit()
 
     for line in fhand:
          paraules = line.split(';')
