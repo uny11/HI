@@ -1,0 +1,6 @@
+
+NOTAS
+
+25/10/2017
+The fuck es un interesan programa de consola
+https://github.com/nvbn/thefuck
