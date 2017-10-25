@@ -3,7 +3,7 @@
 ## Current Status : Active
 
 Holding Ideas (o "hi") is my ultra-simple ToDoList for console.
-Write in python 3.x, the main goal is erase from my head all tasks..
+Write in python 3.x, the main goal is erase from my head all tasks to do and wotk about other things.
 
 ### For install:
  - Download the master branch.
@@ -14,23 +14,27 @@ Write in python 3.x, the main goal is erase from my head all tasks..
 - Python 3.x or more
 
 ### How to use
-- Add a task:
+- Reboot (or start) your tasks files:
+
+**python hi.py init**
+
+- Add a task (argument = "+"):
 
 **python hi.py + this is my first task for @me #test <27/10/17>**
 
-- List the current task (This is the Heart of program):
+- List the current task (argument "ls" This is the most important thing! in program):
 
 **python hi.py ls**
 
-- check a task
+- check a task due with argument "ok":
 
 **python hi.py ok personal 1**
 
-- un-check a task
+- un-check a task with argument "N":
 
 **python hi.py N personal 1**
 
-- archive a task
+- archive a task with argument "-":
 
 **python hi.py - personal 1**
 

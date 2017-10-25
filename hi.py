@@ -136,34 +136,25 @@ elif sys.argv[1] == 'N':
 
 elif sys.argv[1] == 'init':
 
-    if len(sys.argv) == 3:
-        opcion = sys.argv[2]
-        if opcion == 'a':
-            print(Fore.CYAN + Style.BRIGHT + '\nEstas seguro en reiniciar "myarchive.txt"?')
-            op = input('(s/n por defecto "n" >> ')
-            if op == 's' or op == 'S':
-                fhand = open(archive,'w')
-                fhand.close()
-                print(Fore.GREEN + Style.BRIGHT + '"myarchive.txt" ha estat re-iniciat!\n')
-                quit()
-            else:
-                print('Ok, mejor en otro momento')
-                quit()
-    elif len(sys.argv) == 2:
-        print(Fore.CYAN + Style.BRIGHT + '\nEstas seguro en reiniciar "mybrain.txt"?')
-        op = input('(s/n por defecto "n" >> ')
-        if op == 's' or op == 'S':
-            fhand = open(brain,'w')
-            fhand.close()
-            print(Fore.GREEN + Style.BRIGHT + '"mybrain.txt" ha estat re-iniciat!\n')
-            quit()
-        else:
-            print('Ok, mejor en otro momento')
-            quit()
+    print(Fore.RED + Style.BRIGHT + '\nAre you sure to empty "myarchive.txt"?')
+    op = input('(y/n default "n" >> ')
+    if op == 'y' or op == 'Y':
+        fhand = open(archive,'w')
+        fhand.close()
+        print(Fore.GREEN + Style.BRIGHT + '"myarchive.txt" is ready now!\n')
+    else:
+        print('Ok, nothing done.')
 
-    print(Fore.RED + Style.BRIGHT + '\nque vols re-iniciar?\n','python hi.py init [opcional=a]\n')
-    quit()
-
+    print(Fore.RED + Style.BRIGHT + '\nAre you sure to empty "mybrain.txt"?')
+    op = input('(y/n default "n" >> ')
+    if op == 'y' or op == 'Y':
+        fhand = open(brain,'w')
+        fhand.close()
+        print(Fore.GREEN + Style.BRIGHT + '"mybrain.txt" is ready now!\n')
+        quit()
+    else:
+        print('Ok, nothing done.\n')
+        quit()
 
 elif sys.argv[1] == 'ls':
 
