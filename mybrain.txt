@@ -2,7 +2,6 @@
 #upc;2;N;<25/10/17-00:00h>;revisar documentacio necesaria #upc <25/10/17> ;
 #boda;2;N;<29/10/17-00:00h>;contestar @guillem pel video samedayboda #boda <29/10/17> ;
 #boda;3;N;<29/10/17-00:00h>;triar fotos @nouenfoc per album #boda <29/10/17> ;
-#basquet;1;N;<25/10/17-22:00h>;entreno normal #basquet <25/10/17-22h> ;
 #basquet;2;N;<29/10/17-12:30h>; @VILABASQUET-V 	TALLER GONZALEZ CB CUBELLES
 #basquet;3;N;<04/11/17-16:00h>; C.B. BEGUES @VILABASQUET-V
 #basquet;4;N;<12/11/17-12:30h>; @VILABASQUET-V 	C.B. ROQUETES B
