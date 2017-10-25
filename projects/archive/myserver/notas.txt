@@ -1,5 +1,6 @@
 
 NOTAS
+
 24/10/2017
 - Ejemplo de configuración interesante "https://github.com/drduh/Debian-Privacy-Server-Guide".
 - Guia basica para server de Arch-Linux "https://wiki.archlinux.org/index.php/Server".
@@ -8,3 +9,7 @@ NOTAS
 - PC Antiguo para niños y aprender a programar.
 - Alojamiento para tu propia web!
 - Verificar resultados de basquetcatala.com
+
+25/10/2017
+- Fer servir la camara del miniserver per fer aplicacions tipus vigilancia o fotos cada 5min.
+- Crear un servidor amb "VOID Linux" online amb acces a les cameres!
