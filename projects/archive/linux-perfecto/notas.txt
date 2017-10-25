@@ -1,0 +1,7 @@
+
+NOTAS LINUX PERFECTO
+
+24/10/2017
+- Añadir fuentes para consola vistosos y colores!!
+    - https://geekland.eu/mejorar-renderizado-de-fuentes-en-linux/
+- VOID (con runit en lugar de systemd) con repositorio personal

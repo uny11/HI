@@ -1,0 +1,6 @@
+
+NOTAS
+
+24/10/2017
+Estudiar posibles aplicaciones de esta magnifica aplicacion de google:
+ - n-grams google para historico de libros de la humanidad (ver "https://books.google.com/ngrams")
