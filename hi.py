@@ -11,24 +11,26 @@ archive = 'myarchive.txt'   # archivo para guardar tareas eliminadas
 init(autoreset=True)
 
 if len(sys.argv) < 2:
-    print(Fore.RED + Style.BRIGHT + '\nque volies fer alguna cosa?')
+    print(Fore.RED + Style.BRIGHT + '\nsorry, do you want to do something?')
     print('''
-    python hi.py [opcio] 'descripcio de la tasca'
-    opcions:
-        - '+' añadir task
-        - '-' eliminar task
-        - 'X' marcar como hecho!
-        - 'ls' listar.
-    paraules especials:
-        - '@' per persones
-        - '#' per temes/projectes
-        - '<>' per dates\n''')
+    python hi.py [option] [description of task]\n
+    options:
+        - 'init' fot reboot your warehouse of tasks.
+        - '+' for add task
+        - '-' for archive task
+        - 'ok' for check task due
+        - 'N' for uncheck task.
+        - 'ls' for list current tasks
+    Some char specials:
+        - '@' for persons
+        - '#' for themes/subject or groups.
+        - '<>' for dates\n''')
     quit()
 
 if sys.argv[1] == '+':
 
     if len(sys.argv) == 2:
-        print(Fore.RED + Style.BRIGHT + '\nla tasca a afegir esta buida :S\n')
+        print(Fore.RED + Style.BRIGHT + '\nsorry, the task is empty :S\n')
         quit()
 
     tema = '#personal'
@@ -48,7 +50,7 @@ if sys.argv[1] == '+':
                     try:
                         test3 = datetime.strptime(paraula, '<%d/%m/%y>')
                     except:
-                        print(Fore.RED + '''\nel format de la data introduida no es aceptada, fer servir:
+                        print(Fore.RED + '''\nthe format of date is not correct, you can use:
                             - <%d/%m/%y-%H:%Mh>
                             - <%d/%m/%Y-%H:%Mh>
                             - o <%d/%m/%y>\n''')
@@ -66,7 +68,7 @@ if sys.argv[1] == '+':
 elif sys.argv[1] == '-':
 
     if len(sys.argv) < 4:
-        print(Fore.RED + Style.BRIGHT + '\nquina tasca/tema vols archivar?\n','python hi.py - [tema] [idtasca]\n')
+        print(Fore.RED + Style.BRIGHT + '\nsorry, what task do you want to archive?\n','python hi.py - [theme] [idtask]\n')
         quit()
 
     tema = sys.argv[2]
@@ -97,7 +99,7 @@ elif sys.argv[1] == '-':
 elif sys.argv[1] == 'ok':
 
     if len(sys.argv) < 4:
-        print(Fore.RED + Style.BRIGHT + '\nquina tasca/tema vols marcar?\n','python hi.py ok [tema] [idtasca]\n')
+        print(Fore.RED + Style.BRIGHT + '\nsorry, what task do you want to check due?\n','python hi.py ok [theme] [idtask]\n')
         quit()
 
     tema = sys.argv[2]
@@ -117,7 +119,7 @@ elif sys.argv[1] == 'ok':
 elif sys.argv[1] == 'N':
 
     if len(sys.argv) < 4:
-        print(Fore.RED + Style.BRIGHT + '\nquina tasca/tema vols desmarcar?\n','python hi.py N [tema] [idtasca]\n')
+        print(Fore.RED + Style.BRIGHT + '\nsorry, what task do you want to uncheck?\n','python hi.py N [theme] [idtask]\n')
         quit()
 
     tema = sys.argv[2]
@@ -221,10 +223,10 @@ elif sys.argv[1] == 'ls':
 
 else:
     print(Fore.CYAN + Style.BRIGHT + '''
-    \hola, que vols fer? recorda que la primera paraula ha de ser:
-            - 'init' per re-iniciar el magatzem de ideas
-            - '+' afegir tasca/idea
-            - '-' eliminar tasca/idea
-            - 'ok' marcar com fet!
-            - 'N' per desmarcar de fet a no fet
-            - 'ls' veure el meu magatzem d'ideas\n''')
+    \sorry, what do you want to do?
+            - 'init' fot reboot your warehouse of tasks.
+            - '+' for add task
+            - '-' for archive task
+            - 'ok' for check task due
+            - 'N' for uncheck task.
+            - 'ls' for list current tasks\n''')
