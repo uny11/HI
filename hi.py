@@ -25,13 +25,13 @@ if len(sys.argv) < 2:
         - '@' for persons
         - '#' for themes/subject or groups.
         - '<>' for dates\n''')
-    quit()
+    sys.exit()
 
 if sys.argv[1] == '+':
 
     if len(sys.argv) == 2:
         print(Fore.RED + Style.BRIGHT + '\nsorry, the task is empty :S\n')
-        quit()
+        sys.exit()
 
     tema = '#personal'
     data = '<27/06/1982-13:00h>'
@@ -54,7 +54,7 @@ if sys.argv[1] == '+':
                             - <%d/%m/%y-%H:%Mh>
                             - <%d/%m/%Y-%H:%Mh>
                             - o <%d/%m/%y>\n''')
-                        quit()
+                        sys.exit()
 
         descripcio = descripcio + paraula + ' '
 
@@ -69,7 +69,7 @@ elif sys.argv[1] == '-':
 
     if len(sys.argv) < 4:
         print(Fore.RED + Style.BRIGHT + '\nsorry, what task do you want to archive?\n','python hi.py - [theme] [idtask]\n')
-        quit()
+        sys.exit()
 
     tema = sys.argv[2]
     idtasca = sys.argv[3]
@@ -82,7 +82,7 @@ elif sys.argv[1] == '-':
         if re.search(tasca, line):
             delline = line
 
-    if delline == '': quit()
+    if delline == '': sys.exit()
     fhand.seek(0)
     sopa = fhand.read()
     sopa = sopa.replace(delline,'')
@@ -100,7 +100,7 @@ elif sys.argv[1] == 'ok':
 
     if len(sys.argv) < 4:
         print(Fore.RED + Style.BRIGHT + '\nsorry, what task do you want to check due?\n','python hi.py ok [theme] [idtask]\n')
-        quit()
+        sys.exit()
 
     tema = sys.argv[2]
     idtasca = sys.argv[3]
@@ -120,7 +120,7 @@ elif sys.argv[1] == 'N':
 
     if len(sys.argv) < 4:
         print(Fore.RED + Style.BRIGHT + '\nsorry, what task do you want to uncheck?\n','python hi.py N [theme] [idtask]\n')
-        quit()
+        sys.exit()
 
     tema = sys.argv[2]
     idtasca = sys.argv[3]
@@ -153,10 +153,10 @@ elif sys.argv[1] == 'init':
         fhand = open(brain,'w')
         fhand.close()
         print(Fore.GREEN + Style.BRIGHT + '"mybrain.txt" is ready now!\n')
-        quit()
+        sys.exit()
     else:
         print('Ok, nothing done.\n')
-        quit()
+        sys.exit()
 
 elif sys.argv[1] == 'ls':
 
