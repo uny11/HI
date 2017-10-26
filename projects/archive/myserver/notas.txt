@@ -13,3 +13,8 @@ NOTAS
 25/10/2017
 - Fer servir la camara del miniserver per fer aplicacions tipus vigilancia o fotos cada 5min.
 - Crear un servidor amb "VOID Linux" online amb acces a les cameres!
+
+26/10/2017
+- Mirar aquest projecte: https://github.com/nextcloud/server. Sembla perfecte per compartir dades amb el miniserver!
+(ver comprativa aqui: https://www.1and1.es/digitalguide/servidores/know-how/alternativas-a-owncloud-existen-otras-soluciones/)
+- Blog interesante sobre servidores: https://www.1and1.es/digitalguide/servidores/know-how/

@@ -7,3 +7,4 @@
 #hi;1;OK;<27/06/1982-13:00h>;#hi modificar formato de fechas y añadir contador ;
 #basquet;1;OK;<25/10/17-22:00h>;entreno normal #basquet <25/10/17-22h> ;
 #linux;1;OK;<31/12/17>;@thefuck revisar aquest projecte per consola https://github.com/nvbn/thefuck <31/12/17> per #linux ;
+#bigdata;5;OK;<27/06/1982-13:00h>;añadir partidos de torneo #bigdata ;

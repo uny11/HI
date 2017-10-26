@@ -34,3 +34,4 @@
 #trabajo;2;N;<28/02/18>;actualizar LinkedIn para buscar nuevo #trabajo <28/02/18> ;
 #personal;3;N;<27/06/1982-13:00h>;arreglar porter automatic pis @girada ;
 #personal;4;N;<27/06/1982-13:00h>;arreglar porta del despatx pis @girada ;
+#personal;5;N;<27/10/17>;modificar swap y /boot @pc-gran <27/10/17> ;
