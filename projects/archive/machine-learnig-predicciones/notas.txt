@@ -4,3 +4,8 @@ NOTAS
 24/10/2017
  - Leer libros de python de machine learning
   -Revisar-ayudar o crear un proyecto de "machine learning" o prediciones.
+
+27/10/2017
+ - recopilatorioa de temas interesante de machine learnignhttps
+ https://github.com/src-d/awesome-machine-learning-on-source-code
+ - ver este proyecto https://github.com/bblfsh para parser todo tipo de cosas.
