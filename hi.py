@@ -205,7 +205,8 @@ elif sys.argv[1] == 'ls':
                     if paraules[0] == tema:
                         idactual = paraules[1]
                         estat = paraules[2]
-                        if estat == 'N': estat = Fore.RED + estat
+                        if estat == 'N': estat = Fore.RED + Style.BRIGHT + estat
+                        if estat == 'OK': estat = Fore.GREEN + Style.BRIGHT + estat
                         data = paraules[3]
                         datap = funcions.convertir_fecha(data)
                         difp = funcions.dif_fecha(data)
@@ -218,7 +219,8 @@ elif sys.argv[1] == 'ls':
                     if paraules[0] == tema:
                         idactual = paraules[1]
                         estat = paraules[2]
-                        if estat == 'N': estat = Fore.RED + estat
+                        if estat == 'N': estat = Fore.RED + Style.BRIGHT + estat
+                        if estat == 'OK': estat = Fore.GREEN + Style.BRIGHT + estat
                         data = paraules[3]
                         datap = funcions.convertir_fecha(data)
                         difp = funcions.dif_fecha(data)
@@ -238,7 +240,8 @@ elif sys.argv[1] == 'ls':
                 if paraules[0] == tema:
                     idactual = paraules[1]
                     estat = paraules[2]
-                    if estat == 'N': estat = Fore.RED + estat
+                    if estat == 'N': estat = Fore.RED + Style.BRIGHT + estat
+                    if estat == 'OK': estat = Fore.GREEN + Style.BRIGHT + estat
                     data = paraules[3]
                     datap = funcions.convertir_fecha(data)
                     difp = funcions.dif_fecha(data)
