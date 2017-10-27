@@ -34,7 +34,7 @@ if sys.argv[1] == '+':
         sys.exit()
 
     tema = '#personal'
-    data = '<27/06/1982-13:00h>'
+    data = '<08/02/2014-03:00h>'
     descripcio = ''
 
     for paraula in sys.argv[2:]:
@@ -211,7 +211,8 @@ elif sys.argv[1] == 'ls':
                         difp = funcions.dif_fecha(data)
                         task = paraules[4]
                         printtask = funcions.print_task_incolor(task)
-                        print(Fore.YELLOW + Style.BRIGHT + idactual,'    [',estat,']   ',difp,' ',datap,'     ',printtask)
+                        # print(Fore.YELLOW + Style.BRIGHT + idactual,'    [',estat,']   ',difp,' ',datap,'     ',printtask)
+                        print(Fore.YELLOW + Style.BRIGHT + idactual,'\t[',estat,']\t',difp,'\t',datap,'\t',printtask)
                 if re.search('^'+subject,line):
                     paraules = line.split(';')
                     if paraules[0] == tema:
@@ -223,7 +224,8 @@ elif sys.argv[1] == 'ls':
                         difp = funcions.dif_fecha(data)
                         task = paraules[4]
                         printtask = funcions.print_task_incolor(task)
-                        print(Fore.YELLOW + Style.BRIGHT + idactual,'    [',estat,']   ',difp,' ',datap,'     ',printtask)
+                        # print(Fore.YELLOW + Style.BRIGHT + idactual,'    [',estat,']   ',difp,' ',datap,'     ',printtask)
+                        print(Fore.YELLOW + Style.BRIGHT + idactual,'\t[',estat,']\t',difp,'\t',datap,'\t',printtask)
             fhand.close()
         print(' ')
 
@@ -242,7 +244,8 @@ elif sys.argv[1] == 'ls':
                     difp = funcions.dif_fecha(data)
                     task = paraules[4]
                     printtask = funcions.print_task_incolor(task)
-                    print(Fore.YELLOW + Style.BRIGHT + idactual,'    [',estat,']   ',difp,' ',datap,'     ',printtask)
+                    # print(Fore.YELLOW + Style.BRIGHT + idactual,'    [',estat,']   ',difp,' ',datap,'     ',printtask)
+                    print(Fore.YELLOW + Style.BRIGHT + idactual,'\t[',estat,']\t',difp,'\t',datap,'\t',printtask)
             fhand.close()
         print(' ')
 

@@ -24,14 +24,14 @@
 #basquet;21;N;<13/05/18-12:30h>; @VILABASQUET-V 	CLUB NOU BASQUET VILANOVA
 #python;1;N;<31/12/17-18:00h>;llegir llibres #python networking <31/12/2017-18:00h> ;
 #python;2;N;<31/12/17-18:00h>;llegir llibres #python machine learning <31/12/2017-18:00h> ;
-#cotxe;1;N;<27/06/1982-13:00h>;#cotxe canviar la llum de cruce anar @peugeout ;
+#cotxe;1;N;<08/02/2014-03:00h>;#cotxe canviar la llum de cruce anar @peugeout ;
 #bigdata;1;N;<01/11/17>;crear revisio de estadisticas de SE #bigdata <01/11/17> ;
 #bigdata;2;N;<15/11/17>;#bigdata escriure wiki-readme a mode de manual de usuari <15/11/17> ;
-#bigdata;3;N;<15/11/17>;#bigdata comentar en forum hattrick la nueva app para feedback <15/11/17> ;
+#bigdata;3;OK;<15/11/17>;#bigdata comentar en forum hattrick la nueva app para feedback <15/11/17> ;
 #bigdata;4;N;<15/11/17>;#bigdata crear script para unificar bbdd bajadas de gmail <15/11/17> ;
 #upc;3;N;<01/11/17>;mirar info de #upc Alumni <01/11/17> ;
 #trabajo;1;N;<28/02/18>;actualizar CV para buscar nuevo #trabajo <28/02/18> ;
 #trabajo;2;N;<28/02/18>;actualizar LinkedIn para buscar nuevo #trabajo <28/02/18> ;
-#personal;3;N;<27/06/1982-13:00h>;arreglar porter automatic pis @girada ;
-#personal;4;N;<27/06/1982-13:00h>;arreglar porta del despatx pis @girada ;
+#personal;3;N;<08/02/2014-03:00h>;arreglar porter automatic pis @girada ;
+#personal;4;N;<08/02/2014-03:00h>;arreglar porta del despatx pis @girada ;
 #personal;5;N;<27/10/17>;modificar swap y /boot @pc-gran <27/10/17> ;
