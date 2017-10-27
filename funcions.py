@@ -5,6 +5,7 @@ import re
 from datetime import datetime
 
 brain = 'mybrain.txt'   # archivo principal per enmagatzemar-ho tot! xD
+archive = 'myarchive.txt'
 init(autoreset=True)    # para reiniciar colores cada vez
 
 def buscar_id (tema):
@@ -17,7 +18,17 @@ def buscar_id (tema):
         temaactual = paraules[0]
         if tema == temaactual and idmax < int(idactual):
             idmax = int(idactual)
+    fhand.close()
 
+    fhand = open(archive,'r')
+    for line in fhand:
+        paraules = line.split(';')
+        idactual = paraules[1]
+        temaactual = paraules[0]
+        if tema == temaactual and idmax < int(idactual):
+            idmax = int(idactual)
+    fhand.close()
+    
     return idmax
 
 def print_task_incolor(task):
