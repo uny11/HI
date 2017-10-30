@@ -1,8 +1,7 @@
 #upc;1;N;<25/10/17-00:00h>;anar a la etseib a buscar el titol #upc <25/10/17> ;
-#upc;2;N;<25/10/17-00:00h>;revisar documentacio necesaria #upc <25/10/17> ;
+#upc;2;OK;<25/10/17-00:00h>;revisar documentacio necesaria #upc <25/10/17> ;
 #boda;2;N;<29/10/17-00:00h>;contestar @guillem pel video samedayboda #boda <29/10/17> ;
 #boda;3;N;<29/10/17-00:00h>;triar fotos @nouenfoc per album #boda <29/10/17> ;
-#basquet;2;N;<29/10/17-12:30h>; @VILABASQUET-V 	TALLER GONZALEZ CB CUBELLES
 #basquet;3;N;<04/11/17-16:00h>; C.B. BEGUES @VILABASQUET-V
 #basquet;4;N;<12/11/17-12:30h>; @VILABASQUET-V 	C.B. ROQUETES B
 #basquet;5;N;<19/11/17-19:00h>; C.B. MASQUEFA @VILABASQUET-V
@@ -25,16 +24,13 @@
 #python;1;N;<31/12/17-18:00h>;llegir llibres #python networking <31/12/2017-18:00h> ;
 #python;2;N;<31/12/17-18:00h>;llegir llibres #python machine learning <31/12/2017-18:00h> ;
 #cotxe;1;N;<08/02/2014-03:00h>;#cotxe canviar la llum de cruce anar @peugeout ;
-#bigdata;1;N;<01/11/17>;crear revisio de estadisticas de SE #bigdata <01/11/17> ;
 #bigdata;2;N;<15/11/17>;#bigdata escriure wiki-readme a mode de manual de usuari <15/11/17> ;
-#bigdata;3;OK;<15/11/17>;#bigdata comentar en forum hattrick la nueva app para feedback <15/11/17> ;
 #bigdata;4;N;<15/11/17>;#bigdata crear script para unificar bbdd bajadas de gmail <15/11/17> ;
 #upc;3;N;<01/11/17>;mirar info de #upc Alumni <01/11/17> ;
 #trabajo;1;N;<28/02/18>;actualizar CV para buscar nuevo #trabajo <28/02/18> ;
 #trabajo;2;N;<28/02/18>;actualizar LinkedIn para buscar nuevo #trabajo <28/02/18> ;
 #personal;3;N;<08/02/2014-03:00h>;arreglar porter automatic pis @girada ;
 #personal;4;N;<08/02/2014-03:00h>;arreglar porta del despatx pis @girada ;
-#personal;5;N;<27/10/17>;modificar swap y /boot @pc-gran <27/10/17> ;
 #trabajo;3;N;<29/10/17>;mirar info de @holaluz para enviar un CV #trabajo <29/10/17> ;
 #personal;6;N;<01/11/17>;aniversari @unax dinar familiar ;
 #personal;7;N;<08/02/2014-03:00h>;anar veure @abel a font-rubi? o monjos ;
@@ -43,3 +39,12 @@
 #bigdata;6;N;<30/10/17>;crear una federacion en @hattrick para #bigdata <30/10/17> ;
 #personal;10;N;<15/11/17>;configurar nuevo @miniserver <15/11/17> ;
 #personal;11;N;<30/10/17>;mirar descompte @bbva sobre els peatges <30/10/17> ;
+#Spider11;1;N;<01/11/17>;cambiar tema del grub #Spider11 <01/11/17> ;
+#Spider11;2;N;<01/11/17>;mirar plugins para xfce #Spider11 <01/11/17> ;
+#Spider11;3;N;<01/11/17>;buscar un wallpaper molon para #Spider11 <01/11/17> ;
+#Spider11;4;N;<01/11/17>;instalar programas basicos #Spider11 <01/11/17> ;
+#Spider11;5;N;<01/11/17>;#Spider11 revisar funcionamiento de runit <01/11/17> ;
+#Spider11;6;N;<01/11/17>;#Spider11 y mirar funcionamiento de xbps con repositorios <01/11/17> ;
+#Spider11;7;N;<01/11/17>;instalar thefuck-atom-spotify #Spider11 <01/11/17> ;
+#personal;12;N;<19/11/17>;cap de setmana a @montserrat <19/11/17> ;
+#trabajo;4;N;<06/11/17>;pensar en el nuevo puesto de trabajo ofrecido #trabajo por @bruneua <06/11/17> ;

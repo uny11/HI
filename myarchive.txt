@@ -8,3 +8,7 @@
 #basquet;1;OK;<25/10/17-22:00h>;entreno normal #basquet <25/10/17-22h> ;
 #linux;1;OK;<31/12/17>;@thefuck revisar aquest projecte per consola https://github.com/nvbn/thefuck <31/12/17> per #linux ;
 #bigdata;5;OK;<08/02/2014-03:00h>;a�adir partidos de torneo #bigdata ;
+#basquet;2;OK;<29/10/17-12:30h>; @VILABASQUET-V 	TALLER GONZALEZ CB CUBELLES
+#personal;5;OK;<27/10/17>;modificar swap y /boot @pc-gran <27/10/17> ;
+#bigdata;1;OK;<01/11/17>;crear revisio de estadisticas de SE #bigdata <01/11/17> ;
+#bigdata;3;OK;<15/11/17>;#bigdata comentar en forum hattrick la nueva app para feedback <15/11/17> ;

@@ -1,0 +1,6 @@
+
+30/10/2017
+
+Esta empresa "planet" tiene una red de satelites fotografiando el planeta diariamente.
+Se pueden hacer estimaciones de precios mirando como evolucionan las fabricas y similares. Brutal
+- Para freeacount para explorar su API: https://www.planet.com/docs/api-quickstart-examples/
