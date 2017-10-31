@@ -12,3 +12,4 @@
 #personal;5;OK;<27/10/17>;modificar swap y /boot @pc-gran <27/10/17> ;
 #bigdata;1;OK;<01/11/17>;crear revisio de estadisticas de SE #bigdata <01/11/17> ;
 #bigdata;3;OK;<15/11/17>;#bigdata comentar en forum hattrick la nueva app para feedback <15/11/17> ;
+#personal;11;N;<30/10/17>;mirar descompte @bbva sobre els peatges <30/10/17> ;
