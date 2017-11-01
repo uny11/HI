@@ -34,7 +34,10 @@ if sys.argv[1] == '+':
         sys.exit()
 
     tema = '#personal'
-    data = '<08/02/2014-03:00h>'
+    data = datetime.now()
+    data = data.strftime("%d/%m/%y")
+    data = '<'+data+'>'
+    # data = '<08/02/2014-03:00h>'
     descripcio = ''
 
     for paraula in sys.argv[2:]:
