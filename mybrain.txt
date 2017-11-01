@@ -38,14 +38,10 @@
 #personal;9;N;<30/11/17>;mirar tarifas de endesa y buscar opciones @holaluz o @somenergies ;
 #bigdata;6;N;<30/10/17>;crear una federacion en @hattrick para #bigdata <30/10/17> ;
 #personal;10;N;<15/11/17>;configurar nuevo @miniserver <15/11/17> ;
-#Spider11;1;OK;<01/11/17>;cambiar tema del grub #Spider11 <01/11/17> ;
-#Spider11;2;N;<01/11/17>;mirar plugins para xfce #Spider11 <01/11/17> ;
-#Spider11;3;OK;<01/11/17>;buscar un wallpaper molon para #Spider11 <01/11/17> ;
-#Spider11;4;N;<01/11/17>;instalar programas basicos #Spider11 <01/11/17> ;
 #Spider11;5;N;<01/11/17>;#Spider11 revisar funcionamiento de runit <01/11/17> ;
 #Spider11;6;N;<01/11/17>;#Spider11 y mirar funcionamiento de xbps con repositorios <01/11/17> ;
-#Spider11;7;N;<01/11/17>;instalar thefuck-atom-spotify #Spider11 <01/11/17> ;
 #personal;12;N;<19/11/17>;cap de setmana a @montserrat <19/11/17> ;
 #trabajo;4;N;<06/11/17>;pensar en el nuevo puesto de trabajo ofrecido #trabajo por @bruneua <06/11/17> ;
 #trabajo;5;N;<01/11/17>;buscar info sobre google adwors-shopping para el nuevo #trabajo <01/11/17> ;
 #boda;4;N;<08/02/2014-03:00h>;enviar el logotip de la #boda a @nouenfoc ;
+#Spider11;8;N;<08/02/2014-03:00h>;instalar @spotify en #Spider11 ;

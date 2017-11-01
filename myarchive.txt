@@ -13,3 +13,9 @@
 #bigdata;1;OK;<01/11/17>;crear revisio de estadisticas de SE #bigdata <01/11/17> ;
 #bigdata;3;OK;<15/11/17>;#bigdata comentar en forum hattrick la nueva app para feedback <15/11/17> ;
 #personal;11;N;<30/10/17>;mirar descompte @bbva sobre els peatges <30/10/17> ;
+#Spider11;7;OK;<01/11/17>;instalar thefuck-atom-spotify #Spider11 <01/11/17> ;
+#personal;13;N;<08/02/2014-03:00h>;instalar @spotify en ;
+#Spider11;1;OK;<01/11/17>;cambiar tema del grub #Spider11 <01/11/17> ;
+#Spider11;2;OK;<01/11/17>;mirar plugins para xfce #Spider11 <01/11/17> ;
+#Spider11;3;OK;<01/11/17>;buscar un wallpaper molon para #Spider11 <01/11/17> ;
+#Spider11;4;OK;<01/11/17>;instalar programas basicos #Spider11 <01/11/17> ;
