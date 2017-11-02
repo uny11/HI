@@ -22,3 +22,5 @@
 #spider11;8;OK;<08/02/2014-03:00h>;instalar @spotify en #spider11 ;
 #personal;7;OK;<08/02/2014-03:00h>;anar veure @abel a font-rubi? o monjos ;
 #personal;6;OK;<01/11/17>;aniversari @unax dinar familiar ;
+#upc;2;OK;<25/10/17-00:00h>;revisar documentacio necesaria #upc <25/10/17> ;
+#trabajo;5;OK;<01/11/17>;buscar info sobre google adwors-shopping para el nuevo #trabajo <01/11/17> ;

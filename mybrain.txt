@@ -1,5 +1,4 @@
 #upc;1;N;<25/10/17-00:00h>;anar a la etseib a buscar el titol #upc <25/10/17> ;
-#upc;2;OK;<25/10/17-00:00h>;revisar documentacio necesaria #upc <25/10/17> ;
 #boda;2;N;<29/10/17-00:00h>;contestar @guillem pel video samedayboda #boda <29/10/17> ;
 #boda;3;N;<29/10/17-00:00h>;triar fotos @nouenfoc per album #boda <29/10/17> ;
 #basquet;3;N;<04/11/17-16:00h>; C.B. BEGUES @VILABASQUET-V
@@ -39,6 +38,5 @@
 #spider11;5;N;<01/11/17>;#spider11 revisar funcionamiento de runit <01/11/17> ;
 #spider11;6;N;<01/11/17>;#spider11 y mirar funcionamiento de xbps con repositorios <01/11/17> ;
 #personal;12;N;<19/11/17>;cap de setmana a @montserrat <19/11/17> ;
-#trabajo;4;N;<06/11/17>;pensar en el nuevo puesto de trabajo ofrecido #trabajo por @bruneua <06/11/17> ;
-#trabajo;5;OK;<01/11/17>;buscar info sobre google adwors-shopping para el nuevo #trabajo <01/11/17> ;
+#trabajo;4;OK;<06/11/17>;pensar en el nuevo puesto de trabajo ofrecido #trabajo por @bruneua <06/11/17> ;
 #boda;4;N;<08/02/2014-03:00h>;enviar el logotip de la #boda a @nouenfoc ;
