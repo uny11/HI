@@ -160,7 +160,7 @@ elif sys.argv[1] == 'N':
 elif sys.argv[1] == 'init':
 
     print(Fore.RED + Style.BRIGHT + '\nAre you sure to empty "myarchive.txt"?')
-    op = input('(y/n default "n" >> ')
+    op = input('(y/n default "n") >> ')
     if op == 'y' or op == 'Y':
         fhand = open(archive,'w')
         fhand.close()
@@ -169,7 +169,7 @@ elif sys.argv[1] == 'init':
         print('Ok, nothing done.')
 
     print(Fore.RED + Style.BRIGHT + '\nAre you sure to empty "mybrain.txt"?')
-    op = input('(y/n default "n" >> ')
+    op = input('(y/n default "n") >> ')
     if op == 'y' or op == 'Y':
         fhand = open(brain,'w')
         fhand.close()
