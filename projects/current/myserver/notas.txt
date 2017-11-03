@@ -18,3 +18,7 @@ NOTAS
 - Mirar aquest projecte: https://github.com/nextcloud/server. Sembla perfecte per compartir dades amb el miniserver!
 (ver comprativa aqui: https://www.1and1.es/digitalguide/servidores/know-how/alternativas-a-owncloud-existen-otras-soluciones/)
 - Blog interesante sobre servidores: https://www.1and1.es/digitalguide/servidores/know-how/
+
+03/11/2017
+- EEPPC es un i686 (32bits) con 1Gb de RAM y procesador Intel-900Mhz
+

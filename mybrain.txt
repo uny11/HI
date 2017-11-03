@@ -38,10 +38,10 @@
 #spider11;5;N;<01/11/17>;#spider11 revisar funcionamiento de runit <01/11/17> ;
 #spider11;6;N;<01/11/17>;#spider11 y mirar funcionamiento de xbps con repositorios <01/11/17> ;
 #personal;12;N;<19/11/17>;cap de setmana a @montserrat <19/11/17> ;
-#trabajo;4;OK;<06/11/17>;pensar en el nuevo puesto de trabajo ofrecido #trabajo por @bruneua <06/11/17> ;
 #boda;4;N;<08/02/2014-03:00h>;enviar el logotip de la #boda a @nouenfoc ;
 #spider11;9;N;<02/11/17>;revisar algunas guias en @https://wiki.voidlinux.eu/Category:Guides para #spider11 ;
 #spider11;10;N;<02/11/17>;fer un backup de #spider11 ;
 #spider11;11;N;<15/11/17>;instalar @steam en #spider11 <15/11/17> ver guia en @https://wiki.voidlinux.eu/Steam ;
 #spider11;12;N;<02/11/17>;instalar @conky en #spider11 ;
 #personal;14;N;<15/12/17>;aportar a la @hipoteca la parte que falta para los 9.000eur <15/12/17> ;
+#personal;15;N;<06/11/17>;mirar si sha de anar al @sacdegra a comprar <06/11/17> ;

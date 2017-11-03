@@ -24,3 +24,4 @@
 #personal;6;OK;<01/11/17>;aniversari @unax dinar familiar ;
 #upc;2;OK;<25/10/17-00:00h>;revisar documentacio necesaria #upc <25/10/17> ;
 #trabajo;5;OK;<01/11/17>;buscar info sobre google adwors-shopping para el nuevo #trabajo <01/11/17> ;
+#trabajo;4;OK;<06/11/17>;pensar en el nuevo puesto de trabajo ofrecido #trabajo por @bruneua <06/11/17> ;
