@@ -25,3 +25,7 @@
 #upc;2;OK;<25/10/17-00:00h>;revisar documentacio necesaria #upc <25/10/17> ;
 #trabajo;5;OK;<01/11/17>;buscar info sobre google adwors-shopping para el nuevo #trabajo <01/11/17> ;
 #trabajo;4;OK;<06/11/17>;pensar en el nuevo puesto de trabajo ofrecido #trabajo por @bruneua <06/11/17> ;
+#spider11;12;OK;<02/11/17>;instalar @conky en #spider11 ;
+#spider11;11;OK;<15/11/17>;instalar @steam en #spider11 <15/11/17> ver guia en @https://wiki.voidlinux.eu/Steam ;
+#spider11;10;OK;<02/11/17>;fer un backup de #spider11 ;
+#spider11;9;OK;<02/11/17>;revisar algunas guias en @https://wiki.voidlinux.eu/Category:Guides para #spider11 ;
