@@ -1,0 +1,27 @@
+
+07/11/2017
+- Instalar Nexus-MOD, para organizar los MOD instalados.
+- Instalar nuevo HUD y nuevo mapa.
+- Ver algun MOD para ver frames (framerate).
+
+PERSONAJE
+07/11/2017
+- Reducción en el equipo final en Alteración + Restauración. No usar Destrucción.
+- Armas con Soul-Trap (conjuracion) + Paralysys (alteracion!).
+- Arco + Escudo+Espada. Magia defensiva.
+- Equipo encantado para potencias alquimia, otro para herreria.
+ROL
+- Vampiro, personaje oscuro con alergia a la gente en lo posible. Asesino y con ataque sigilosos.
+- Casa. Casa de Faerkheart, cerca de la hermandad oscura. En el bosque, alejado de la civización.
+- Nombre
+- Raza: Breton o Elfo oscuro.
+ALQUIMIA
+- Dedo de Gigante, Garra de oso y trigo.
+- Flor azul de montaña, trigo y ala de mariposa azul. -> Poción cara, no útil.
+- Raiz trepadora, Dedo de gigante y trigo.
+DIFICULTAD
+- Apprentice 	x1.5 	x0.75
+- Adept 	x1 	x1
+- Expert 	x0.75 	x1.5
+- Master 	x0.5 	x2
+- Legendary 	x0.25 	x3

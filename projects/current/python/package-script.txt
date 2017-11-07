@@ -1,0 +1,4 @@
+Lista de modulos interesantes:
+
+pyinstaller program in:http://www.pyinstaller.org/
+openCV para activar camera de portatil o pc (video o imagen)

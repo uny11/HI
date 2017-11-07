@@ -29,3 +29,6 @@
 #spider11;11;OK;<15/11/17>;instalar @steam en #spider11 <15/11/17> ver guia en @https://wiki.voidlinux.eu/Steam ;
 #spider11;10;OK;<02/11/17>;fer un backup de #spider11 ;
 #spider11;9;OK;<02/11/17>;revisar algunas guias en @https://wiki.voidlinux.eu/Category:Guides para #spider11 ;
+#basquet;3;OK;<04/11/17-16:00h>; C.B. BEGUES @VILABASQUET-V
+#spider11;6;OK;<01/11/17>;#spider11 y mirar funcionamiento de xbps con repositorios <01/11/17> ;
+#spider11;5;OK;<01/11/17>;#spider11 revisar funcionamiento de runit <01/11/17> ;
