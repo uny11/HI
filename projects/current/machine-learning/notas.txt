@@ -9,3 +9,9 @@ NOTAS
  - recopilatorioa de temas interesante de machine learnignhttps
  https://github.com/src-d/awesome-machine-learning-on-source-code
  - ver este proyecto https://github.com/bblfsh para parser todo tipo de cosas.
+
+
+
+08/11/2017
+IPOR: Empiezo a leer el libro sobre mahcine learning. Pagina en curso -> pag-16
+Para codigo de ejemplo del libro https://github.com/luispedro/BuildingMachineLearningSystemsWithPython

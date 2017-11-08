@@ -38,7 +38,5 @@
 #boda;4;N;<08/02/2014-03:00h>;enviar el logotip de la #boda a @nouenfoc ;
 #personal;14;N;<15/12/17>;aportar a la @hipoteca la parte que falta para los 9.000eur <15/12/17> ;
 #personal;15;N;<06/11/17>;mirar si sha de anar al @sacdegra a comprar <06/11/17> ;
-#skyrim;1;N;<20/11/17>;fer un script per mirar millor opciones per la @alquimia de #skyrim <20/11/17> ;
 #skyrim;2;N;<20/11/17>;#skyrim pensar el rol-nom del personatge <20/11/17> ;
-#skyrim;3;N;<20/11/17>;mirar nexus-mod per #skyrim <20/11/17> ;
 #skyrim;4;N;<20/11/17>;hacer test de #skyrim con void-linux y playonlinux <20/11/17> ;
