@@ -34,3 +34,4 @@
 #spider11;5;OK;<01/11/17>;#spider11 revisar funcionamiento de runit <01/11/17> ;
 #skyrim;1;N;<20/11/17>;fer un script per mirar millor opciones per la @alquimia de #skyrim <20/11/17> ;
 #skyrim;3;OK;<20/11/17>;mirar nexus-mod per #skyrim <20/11/17> ;
+#skyrim;2;OK;<20/11/17>;#skyrim pensar el rol-nom del personatge <20/11/17> ;

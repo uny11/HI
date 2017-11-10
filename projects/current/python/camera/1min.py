@@ -1,4 +1,5 @@
 # The goal es hacer un script para hacer fotos cada x tiempo.
+# Loop amb el "white"
 
 import cv2
 from colorama import init, Fore, Back, Style
@@ -19,7 +20,7 @@ def sacar_foto (string):
 
 init(autoreset=True)    # reiniciar colores
 
-print(Style.BRIGHT+'\nHola uny11!')
+print(Style.BRIGHT+'\nHola Isaac!')
 freq = input('bien, ¿con que frecuencia quieres hacer una foto? (en segundos): ')
 total = input('Cuantas fotos quieres hacer? ')
 total = int(total)

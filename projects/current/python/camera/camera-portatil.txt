@@ -1,3 +1,8 @@
 
 07/11/2017
 - Script para activar camera con modulo openCV-python
+
+09/11/2017
+- El modulo opencv, con la accion "videocapture" se puede mirar un camera IP en stream! ("Open video file or a capturing device or a IP video stream for video capturing. ")
+https://docs.opencv.org/3.3.1/d8/dfe/classcv_1_1VideoCapture.html#a57c0e81e83e60f36c83027dc2a188e80
+
