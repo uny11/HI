@@ -7,8 +7,8 @@ from colorama import init, Fore, Back, Style
 
 def sacar_foto (string):
     cap = cv2.VideoCapture(0)
-    ret = cap.set(3,320)
-    ret = cap.set(4,170)
+    ret = cap.set(3,640)
+    ret = cap.set(4,340)
     ret,frame = cap.read()
     fichero = 'f'+str(string)+'.png'
     cv2.imwrite(fichero,frame)
