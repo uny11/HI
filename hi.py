@@ -13,7 +13,7 @@ init(autoreset=True)
 if len(sys.argv) < 2:
     print(Fore.RED + Style.BRIGHT + '\nsorry, do you want to do something?')
     print('''
-    python hi.py [option] [description of task]\n
+    python hi.py [option]\n
     options:
         - 'init' fot reboot your warehouse of tasks.
         - '+' for add task
@@ -193,7 +193,8 @@ elif sys.argv[1] == 'ls':
          if paraules[0] != '\n':
              if paraules[0] not in temas:
                  temas.append(paraules[0])
-                 temas.sort(reverse=True)
+                 # temas.sort(reverse=True)
+                 temas.sort()
     fhand.close()
 
     try:

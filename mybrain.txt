@@ -38,3 +38,4 @@
 #personal;14;N;<15/12/17>;aportar a la @hipoteca la parte que falta para los 9.000eur <15/12/17> ;
 #personal;15;N;<06/11/17>;mirar si sha de anar al @sacdegra a comprar <06/11/17> ;
 #skyrim;4;N;<20/11/17>;hacer test de #skyrim con void-linux y playonlinux <20/11/17> ;
+#personal;16;N;<01/12/17>;comprar una aspiradora per casa <01/12/17> ;

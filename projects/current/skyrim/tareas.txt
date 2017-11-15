@@ -13,7 +13,7 @@ PERSONAJE
 ROL
 - Vampiro, personaje oscuro con alergia a la gente en lo posible. Asesino y con ataque sigilosos.
 - Casa. Casa de Faerkheart, cerca de la hermandad oscura. En el bosque, alejado de la civización.
-- Nombre
+- Nombre: Han
 - Raza: Breton o Elfo oscuro.
 ALQUIMIA
 - Dedo de Gigante, Garra de oso y trigo.
@@ -25,3 +25,20 @@ DIFICULTAD
 - Expert 	x0.75 	x1.5
 - Master 	x0.5 	x2
 - Legendary 	x0.25 	x3
+
+15/11/2017
+- Instalar MOD "the matter of Time"
+- Lord Stone -> Norte de the silent moon (encima whiterun)
+- Descantar una arma con el soul trap!!!
+- The Atronach Stone -> Entre High Hrothgar y Riften.
+- The Lover Stone -> Norte de Markarth (muy cerca).
+- Shrine of Azura -> Sud de Winterhold.
+- A Daedra's Best Friend -> Para la Masque of Clavicus Vile.
+- A Night To Remember para la Rose de Sanguine (beber con un tal Sam Guevenne).
+- Thieves Guild Quest -> Go to Riften
+- Dark Brotherhood Quest!
+- College of Winterhold
+- Main Quest, ir a High Horthgar + primera mission.
+- DawnGuard quest!!
+- Steward: Le puedes pedir que haga cosas por ti!
+- Ir a Loreius Farm (norte cerca de whiterun) para la DarkBortherhood.
