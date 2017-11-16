@@ -11,10 +11,6 @@ x = x[x>0]
 y = xp_levelup(x)
 z = sp.array( [sum(y[:(i+1)]) for i in range(80)] )
 
-print(x)
-print(y)
-print(z)
-
 # Dibuja un bonito grafico
 plt.plot(x, z, linewidth=1)
 plt.legend(["XP", "XPcum"], loc="upper left")

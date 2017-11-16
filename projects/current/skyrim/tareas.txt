@@ -27,8 +27,8 @@ DIFICULTAD
 - Legendary 	x0.25 	x3
 
 15/11/2017
-- Instalar MOD "the matter of Time"
-- Lord Stone -> Norte de the silent moon (encima whiterun)
+- Instalar MOD "the matter of Time" -> [FET]
+- Lord Stone -> Norte de the silent moon (encima whiterun) -> [FET]
 - Descantar una arma con el soul trap!!!
 - The Atronach Stone -> Entre High Hrothgar y Riften.
 - The Lover Stone -> Norte de Markarth (muy cerca).
@@ -38,7 +38,11 @@ DIFICULTAD
 - Thieves Guild Quest -> Go to Riften
 - Dark Brotherhood Quest!
 - College of Winterhold
-- Main Quest, ir a High Horthgar + primera mission.
+- Main Quest, ir a High Horthgar + primera mission. -> [FET]
 - DawnGuard quest!!
 - Steward: Le puedes pedir que haga cosas por ti!
 - Ir a Loreius Farm (norte cerca de whiterun) para la DarkBortherhood.
+
+16/11/2017
+- Para el bug de las almas de dragones:
+modav dragonsouls 1 -> Para añadir 1 alma.
