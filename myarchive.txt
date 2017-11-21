@@ -38,3 +38,8 @@
 #basquet;4;OK;<12/11/17-12:30h>; @VILABASQUET-V 	C.B. ROQUETES B
 #hattrick;1;OK;<12/11/2017-22:38h>;comprar a @valerigomis jugador de #hattrick <12/11/2017-22:38h> ;
 #skyrim;5;OK;<10/11/17>;apuntar ingredientes de pocimas mas caras de #skyrim ;
+#personal;15;OK;<06/11/17>;mirar si sha de anar al @sacdegra a comprar <06/11/17> ;
+#personal;12;OK;<19/11/17>;cap de setmana a @montserrat <19/11/17> ;
+#hattrick;2;N;<19/11/2017-19:55h>;comprar a @Tzolov para @obiwan #hattrick <19/11/2017-19:55h> ;
+#cotxe;1;OK;<08/02/2014-03:00h>;#cotxe canviar la llum de cruce anar @peugeout ;
+#basquet;5;OK;<19/11/17-19:00h>; C.B. MASQUEFA @VILABASQUET-V
