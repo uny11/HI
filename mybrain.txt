@@ -38,3 +38,4 @@
 #personal;17;N;<26/11/17>;anar a la opera amb la @laia <26/11/17> ;
 #trabajo;6;N;<21/11/17>;esperar la nueva agenda de #trabajo ;
 #personal;18;N;<06/12/17>;la @bili ve a netejar <06/12/17> ;
+#personal;19;N;<23/11/17>;mirar ofertas para el blackfriday ;
