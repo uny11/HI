@@ -39,3 +39,5 @@
 #trabajo;6;N;<21/11/17>;esperar la nueva agenda de #trabajo ;
 #personal;18;N;<06/12/17>;la @bili ve a netejar <06/12/17> ;
 #personal;19;N;<23/11/17>;mirar ofertas para el blackfriday ;
+#skyrim;6;N;<24/11/17>;buscar mods supervivencia comida-dormir-frio-no fast travel-inicio diferente para #skyrim ;
+#personal;20;N;<24/11/17>;mirar el seguro del cotxe ;
