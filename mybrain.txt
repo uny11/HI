@@ -1,6 +1,4 @@
 #upc;1;N;<25/10/17-00:00h>;anar a la etseib a buscar el titol #upc <25/10/17> ;
-#boda;2;N;<29/10/17-00:00h>;contestar @guillem pel video samedayboda #boda <29/10/17> ;
-#boda;3;N;<29/10/17-00:00h>;triar fotos @nouenfoc per album #boda <29/10/17> ;
 #basquet;6;N;<03/12/17-12:30h>; @VILABASQUET-V 	AE MVP CERVELLO B
 #basquet;7;N;<16/12/17-16:15h>; B.M. VILADECANS B @VILABASQUET-V
 #basquet;8;N;<14/01/18-12:30h>; @VILABASQUET-V 	C.B. JOVENTUT CASTELLDEFELS
@@ -36,8 +34,7 @@
 #skyrim;4;N;<20/11/17>;hacer test de #skyrim con void-linux y playonlinux <20/11/17> ;
 #personal;16;N;<01/12/17>;comprar una aspiradora per casa <01/12/17> ;
 #personal;17;N;<26/11/17>;anar a la opera amb la @laia <26/11/17> ;
-#trabajo;6;N;<21/11/17>;esperar la nueva agenda de #trabajo ;
 #personal;18;N;<06/12/17>;la @bili ve a netejar <06/12/17> ;
-#personal;19;N;<23/11/17>;mirar ofertas para el blackfriday ;
-#skyrim;6;N;<24/11/17>;buscar mods supervivencia comida-dormir-frio-no fast travel-inicio diferente para #skyrim ;
 #personal;20;N;<24/11/17>;mirar el seguro del cotxe ;
+#skyrim;7;N;<30/11/17>;crear un nuevo personaje tocho-orco #skyrim ;
+#skyrim;8;N;<30/11/17>;mirar ropas para magos del mod de armaduras #skyrim ;

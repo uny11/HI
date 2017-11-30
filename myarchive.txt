@@ -43,3 +43,8 @@
 #hattrick;2;N;<19/11/2017-19:55h>;comprar a @Tzolov para @obiwan #hattrick <19/11/2017-19:55h> ;
 #cotxe;1;OK;<08/02/2014-03:00h>;#cotxe canviar la llum de cruce anar @peugeout ;
 #basquet;5;OK;<19/11/17-19:00h>; C.B. MASQUEFA @VILABASQUET-V
+#boda;2;OK;<29/10/17-00:00h>;contestar @guillem pel video samedayboda #boda <29/10/17> ;
+#boda;3;OK;<29/10/17-00:00h>;triar fotos @nouenfoc per album #boda <29/10/17> ;
+#skyrim;6;OK;<24/11/17>;buscar mods supervivencia comida-dormir-frio-no fast travel-inicio diferente para #skyrim ;
+#trabajo;6;OK;<21/11/17>;esperar la nueva agenda de #trabajo ;
+#personal;19;N;<23/11/17>;mirar ofertas para el blackfriday ;
