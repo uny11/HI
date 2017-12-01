@@ -48,3 +48,4 @@
 #skyrim;6;OK;<24/11/17>;buscar mods supervivencia comida-dormir-frio-no fast travel-inicio diferente para #skyrim ;
 #trabajo;6;OK;<21/11/17>;esperar la nueva agenda de #trabajo ;
 #personal;19;N;<23/11/17>;mirar ofertas para el blackfriday ;
+#boda;4;OK;<08/02/2014-03:00h>;enviar el logotip de la #boda a @nouenfoc ;
