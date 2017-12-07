@@ -50,3 +50,4 @@
 #personal;19;N;<23/11/17>;mirar ofertas para el blackfriday ;
 #boda;4;OK;<08/02/2014-03:00h>;enviar el logotip de la #boda a @nouenfoc ;
 #basquet;6;OK;<03/12/17-12:30h>; @VILABASQUET-V 	AE MVP CERVELLO B
+#personal;18;N;<06/12/17>;la @bili ve a netejar <06/12/17> ;

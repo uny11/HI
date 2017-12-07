@@ -32,7 +32,7 @@
 #skyrim;4;N;<20/11/17>;hacer test de #skyrim con void-linux y playonlinux <20/11/17> ;
 #personal;16;N;<01/12/17>;comprar una aspiradora per casa <01/12/17> ;
 #personal;17;N;<26/11/17>;anar a la opera amb la @laia <26/11/17> ;
-#personal;18;N;<06/12/17>;la @bili ve a netejar <06/12/17> ;
 #personal;20;N;<24/11/17>;mirar el seguro del cotxe ;
 #skyrim;7;N;<30/11/17>;crear un nuevo personaje tocho-orco #skyrim ;
 #skyrim;8;N;<30/11/17>;mirar ropas para magos del mod de armaduras #skyrim ;
+#personal;21;N;<13/12/17>;la @bili ve a netejar <13/12/17> ;
