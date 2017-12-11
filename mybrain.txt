@@ -24,7 +24,6 @@
 #personal;3;N;<08/02/2014-03:00h>;arreglar porter automatic pis @girada ;
 #personal;4;N;<08/02/2014-03:00h>;arreglar porta del despatx pis @girada ;
 #trabajo;3;N;<29/10/17>;mirar info de @holaluz para enviar un CV #trabajo <29/10/17> ;
-#personal;8;N;<30/11/17-12:00h>;comprar loteria de @bruneau y @picking <30/11/17-12:00h> ;
 #personal;9;N;<30/11/17>;mirar tarifas de endesa y buscar opciones @holaluz o @somenergies ;
 #bigdata;6;N;<30/10/17>;crear una federacion en @hattrick para #bigdata <30/10/17> ;
 #personal;10;N;<15/11/17>;configurar nuevo @miniserver <15/11/17> ;
@@ -36,3 +35,4 @@
 #skyrim;7;N;<30/11/17>;crear un nuevo personaje tocho-orco #skyrim ;
 #skyrim;8;N;<30/11/17>;mirar ropas para magos del mod de armaduras #skyrim ;
 #personal;21;N;<13/12/17>;la @bili ve a netejar <13/12/17> ;
+#personal;22;N;<12/12/17>;anar a buscar la cistella <12/12/17> ;
