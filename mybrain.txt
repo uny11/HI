@@ -35,4 +35,3 @@
 #skyrim;7;N;<30/11/17>;crear un nuevo personaje tocho-orco #skyrim ;
 #skyrim;8;N;<30/11/17>;mirar ropas para magos del mod de armaduras #skyrim ;
 #personal;21;N;<13/12/17>;la @bili ve a netejar <13/12/17> ;
-#personal;22;N;<12/12/17>;anar a buscar la cistella <12/12/17> ;
