@@ -53,3 +53,5 @@
 #personal;18;N;<06/12/17>;la @bili ve a netejar <06/12/17> ;
 #personal;8;OK;<30/11/17-12:00h>;comprar loteria de @bruneau y @picking <30/11/17-12:00h> ;
 #personal;22;OK;<12/12/17>;anar a buscar la cistella <12/12/17> ;
+#personal;21;OK;<13/12/17>;la @bili ve a netejar <13/12/17> ;
+#skyrim;8;N;<30/11/17>;mirar ropas para magos del mod de armaduras #skyrim ;

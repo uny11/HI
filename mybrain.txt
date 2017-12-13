@@ -33,5 +33,4 @@
 #personal;17;N;<26/11/17>;anar a la opera amb la @laia <26/11/17> ;
 #personal;20;N;<24/11/17>;mirar el seguro del cotxe ;
 #skyrim;7;N;<30/11/17>;crear un nuevo personaje tocho-orco #skyrim ;
-#skyrim;8;N;<30/11/17>;mirar ropas para magos del mod de armaduras #skyrim ;
-#personal;21;N;<13/12/17>;la @bili ve a netejar <13/12/17> ;
+#personal;23;N;<11/01/17>;la @bili ve ha netejar el pis <11/01/17> ;
