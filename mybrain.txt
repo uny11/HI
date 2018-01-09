@@ -1,5 +1,4 @@
 #upc;1;N;<25/10/17-00:00h>;anar a la etseib a buscar el titol #upc <25/10/17> ;
-#basquet;7;N;<16/12/17-16:15h>; B.M. VILADECANS B @VILABASQUET-V
 #basquet;8;N;<14/01/18-12:30h>; @VILABASQUET-V 	C.B. JOVENTUT CASTELLDEFELS
 #basquet;9;N;<20/01/18-18:00h>; CLUB NOU BASQUET VILANOVA @VILABASQUET-V
 #basquet;10;N;<04/02/18-17:30h>; JOVENTUT SANT VICENÇ @VILABASQUET-V
@@ -16,7 +15,6 @@
 #basquet;21;N;<13/05/18-12:30h>; @VILABASQUET-V 	CLUB NOU BASQUET VILANOVA
 #python;1;N;<31/12/17-18:00h>;llegir llibres #python networking <31/12/2017-18:00h> ;
 #python;2;N;<31/12/17-18:00h>;llegir llibres #python machine learning <31/12/2017-18:00h> ;
-#bigdata;2;N;<15/11/17>;#bigdata escriure wiki-readme a mode de manual de usuari <15/11/17> ;
 #bigdata;4;N;<15/11/17>;#bigdata crear script para unificar bbdd bajadas de gmail <15/11/17> ;
 #upc;3;N;<01/11/17>;mirar info de #upc Alumni <01/11/17> ;
 #trabajo;1;N;<28/02/18>;actualizar CV para buscar nuevo #trabajo <28/02/18> ;
@@ -25,11 +23,8 @@
 #personal;4;N;<08/02/2014-03:00h>;arreglar porta del despatx pis @girada ;
 #trabajo;3;N;<29/10/17>;mirar info de @holaluz para enviar un CV #trabajo <29/10/17> ;
 #personal;9;N;<30/11/17>;mirar tarifas de endesa y buscar opciones @holaluz o @somenergies ;
-#bigdata;6;N;<30/10/17>;crear una federacion en @hattrick para #bigdata <30/10/17> ;
 #personal;10;N;<15/11/17>;configurar nuevo @miniserver <15/11/17> ;
-#personal;14;N;<15/12/17>;aportar a la @hipoteca la parte que falta para los 9.000eur <15/12/17> ;
 #skyrim;4;N;<20/11/17>;hacer test de #skyrim con void-linux y playonlinux <20/11/17> ;
-#personal;16;N;<01/12/17>;comprar una aspiradora per casa <01/12/17> ;
 #personal;17;N;<26/11/17>;anar a la opera amb la @laia <26/11/17> ;
 #personal;20;N;<24/11/17>;mirar el seguro del cotxe ;
 #skyrim;7;N;<30/11/17>;crear un nuevo personaje tocho-orco #skyrim ;

@@ -55,3 +55,8 @@
 #personal;22;OK;<12/12/17>;anar a buscar la cistella <12/12/17> ;
 #personal;21;OK;<13/12/17>;la @bili ve a netejar <13/12/17> ;
 #skyrim;8;N;<30/11/17>;mirar ropas para magos del mod de armaduras #skyrim ;
+#basquet;7;OK;<16/12/17-16:15h>; B.M. VILADECANS B @VILABASQUET-V
+#bigdata;2;OK;<15/11/17>;#bigdata escriure wiki-readme a mode de manual de usuari <15/11/17> ;
+#bigdata;6;OK;<30/10/17>;crear una federacion en @hattrick para #bigdata <30/10/17> ;
+#personal;14;OK;<15/12/17>;aportar a la @hipoteca la parte que falta para los 9.000eur <15/12/17> ;
+#personal;16;OK;<01/12/17>;comprar una aspiradora per casa <01/12/17> ;
