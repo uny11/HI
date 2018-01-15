@@ -60,3 +60,6 @@
 #bigdata;6;OK;<30/10/17>;crear una federacion en @hattrick para #bigdata <30/10/17> ;
 #personal;14;OK;<15/12/17>;aportar a la @hipoteca la parte que falta para los 9.000eur <15/12/17> ;
 #personal;16;OK;<01/12/17>;comprar una aspiradora per casa <01/12/17> ;
+#basquet;8;OK;<14/01/18-12:30h>; @VILABASQUET-V 	C.B. JOVENTUT CASTELLDEFELS
+#bigdata;4;OK;<15/11/17>;#bigdata crear script para unificar bbdd bajadas de gmail <15/11/17> ;
+#personal;23;OK;<11/01/17>;la @bili ve ha netejar el pis <11/01/17> ;

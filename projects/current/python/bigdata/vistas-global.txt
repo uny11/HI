@@ -1,0 +1,29 @@
+
+evento 18 - Corner+Anotacion
+
+create view corner_ano as
+select a.MatchID, 
+a.Minute, 
+case
+	when a.EventTypeID='118'	then 'GOL'
+	else 'FALLO'
+end as Exito, 
+a.SubjectTeamID,
+case
+	when a.SubjectTeamID=b.HomeTeamID THEN 'Local'
+	else 'Visitante' 
+end as Equipo,
+a.SubjectPlayerID, 
+a.SubAnotacion, 
+(b.PossessionFirstHalfHome+b.PossessionSecondHalfHome)/2 as PosMedia,
+case
+	when a.SubjectTeamID=b.HomeTeamID THEN b.RatingIndirectSetPiecesAtthome
+	else b.RatingIndirectSetPiecesAttaway 
+end as BPInd_Att,
+case
+	when a.SubjectTeamID=b.HomeTeamID THEN b.RatingIndirectSetPiecesDefaway
+	else b.RatingIndirectSetPiecesdefhome 
+end as BPInd_Def
+from eventos as a
+left join partidos as b ON a.MatchID=b.MatchID
+where EventTypeID='118' or EventTypeID='218'
