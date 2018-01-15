@@ -310,6 +310,9 @@ for base in listaBases:
     conn2.commit()
     cur2.close()
 
+    print('La base de datos:'+base+' ha sido añadida')
 
 conn.commit()
 cur.close()
+
+print('Proceso terminado')
