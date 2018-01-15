@@ -228,7 +228,7 @@ for base in listaBases:
     ListaTarjetas = []
     cur.execute('SELECT DISTINCT MatchID,IndexTarjeta FROM tarjetas')
     for row in cur:
-        ListaLesiones.append(str(row[0])+str(row[1]))
+        ListaTarjetas.append(str(row[0])+str(row[1]))
 
     cur2.execute('SELECT * FROM tarjetas')
     for row in cur2:
@@ -236,6 +236,76 @@ for base in listaBases:
             None
         else:
             cur.execute('INSERT INTO tarjetas (MatchID, IndexTarjeta, PlayerID, TeamID, BookingType, BookingMinute) VALUES (?, ?, ?, ?, ?, ?)',(row[0],row[1],row[2],row[3],row[4], row[5]))
+
+    #Introducimos tabla eventos
+    ListaEventos = []
+    cur.execute('SELECT DISTINCT MatchID,IndexEv FROM eventos')
+    for row in cur:
+        ListaEventos.append(str(row[0])+str(row[1]))
+    cur2.execute('SELECT * FROM eventos')
+    for row in cur2:
+        if str(row[0])+str(row[1]) in ListaEventos:
+            None
+        else:
+            cur.execute('INSERT INTO eventos (MatchID, IndexEv, Minute, EventTypeID, SubjectTeamID, SubjectPlayerID, ObjectPlayerID, SubPorteria, SubDefensa, SubJugadas, SubLateral, SubPases, SubAnotacion, SubBP, SubXP, SubForma, SubResistencia, SubSpecialty, SubLoyalty, SubMotherClubBonus, ObjPorteria, ObjDefensa, ObjJugadas, ObjLateral, ObjPases, ObjAnotacion, ObjXP, ObjForma, ObjResistencia, ObjSpecialty, ObjLoyalty, ObjMotherClubBonus, ObjBP) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',(row[0],row[1],row[2],row[3],row[4], row[5], row[6], row[7], row[8], row[9], row[10], row[11], row[12], row[13], row[14], row[15], row[16], row[17], row[18], row[19], row[20], row[21], row[22], row[23], row[24], row[25], row[26], row[27], row[28], row[29], row[30], row[31], row[32]))
+
+    #Introducimos tabla eventosSub
+    ListaEventosSub = []
+    cur2.execute('SELECT DISTINCT MatchID,IndexEv,SubPorteria FROM eventos')
+    for row in cur2:
+        if row[2] != None and row[2] != -1:
+            ListaEventosSub.append(str(row[0])+str(row[1])+str(row[2]))
+
+    cur.execute('SELECT * FROM eventos')
+    for row in cur:
+        if str(row[0])+str(row[1])+str(row[7]) in ListaEventosSub:
+            cur2.execute('SELECT * FROM eventos WHERE MatchID=? and IndexEv=? LIMIT 1',(row[0], row[1]))
+            Hab = cur2.fetchone()
+            SubPor=Hab[7]
+            SubDef=Hab[8]
+            SubJug=Hab[9]
+            SubLat=Hab[10]
+            SubPas=Hab[11]
+            SubAno=Hab[12]
+            SubBP=Hab[13]
+            SubXP=Hab[14]
+            SubFor=Hab[15]
+            SubRes=Hab[16]
+            SubSpe=Hab[17]
+            SubLoy=Hab[18]
+            SubMot=Hab[19]
+            cur.execute('UPDATE eventos SET SubPorteria=?, SubDefensa=?, SubJugadas=?, SubLateral=?, SubPases=?, SubAnotacion=?, SubBP=?, SubXP=?, SubForma=?, SubResistencia=?, SubSpecialty=?, SubLoyalty=?, SubMotherClubBonus=? WHERE MatchID=? and IndexEv=?',(SubPor,SubDef,SubJug,SubLat,SubPas,SubAno,SubBP,SubXP,SubFor,SubRes,SubSpe,SubLoy,SubMot,row[0],row[1]))
+        else:
+            None
+
+    #Introducimos tabla eventosObj
+    ListaEventosObj = []
+    cur2.execute('SELECT DISTINCT MatchID,IndexEv,ObjPorteria FROM eventos')
+    for row in cur2:
+        if row[2] != None and row[2] != -1:
+            ListaEventosObj.append(str(row[0])+str(row[1])+str(row[2]))
+
+    cur.execute('SELECT * FROM eventos')
+    for row in cur:
+        if str(row[0])+str(row[1])+str(row[7]) in ListaEventosObj:
+            cur2.execute('SELECT * FROM eventos WHERE MatchID=? and IndexEv=? LIMIT 1',(row[0], row[1]))
+            Hab = cur2.fetchone()
+            ObjPor= Hab[20]
+            ObjDef=Hab[21]
+            ObjJug=Hab[22]
+            ObjLat=Hab[23]
+            ObjPas=Hab[24]
+            ObjAno=Hab[25]
+            ObjXP=Hab[26]
+            ObjFor=Hab[27]
+            ObjRes=Hab[28]
+            ObjSpe=Hab[29]
+            ObjLoy=Hab[30]
+            ObjMot=Hab[31]
+            ObjBP=Hab[32]
+            cur.execute('UPDATE eventos SET ObjPorteria=?, ObjDefensa=?, ObjJugadas=?, ObjLateral=?, ObjPases=?, ObjAnotacion=?, ObjXP=?, ObjForma=?, ObjResistencia=?, ObjSpecialty=?, ObjLoyalty=?, ObjMotherClubBonus=?, ObjBP=? WHERE MatchID=? and IndexEv=?',(ObjPor,ObjDef,ObjJug,ObjLat,ObjPas,ObjAno,ObjXP,ObjFor,ObjRes,ObjSpe,ObjLoy,ObjMot,ObjBP, row[0], row[1]))
+        else:
+            None
 
     conn2.commit()
     cur2.close()
