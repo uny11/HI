@@ -27,3 +27,162 @@ end as BPInd_Def
 from eventos as a
 left join partidos as b ON a.MatchID=b.MatchID
 where EventTypeID='118' or EventTypeID='218'
+
+
+[Ev19 Cor+CAB]
+
+select a.MatchID, 
+a.Minute, 
+case
+	when a.EventTypeID='119'	then 'GOL'
+	else 'FALLO'
+end as Exito, 
+a.SubjectTeamID,
+case
+	when a.SubjectTeamID=b.HomeTeamID THEN '1'
+	else '2' 
+end as Equipo,
+a.SubjectPlayerID,
+a.ObjectPlayerID,
+(b.PossessionFirstHalfHome+b.PossessionSecondHalfHome)/2 as PosMedia,
+a.Objanotacion as BPBepero,
+case
+	when a.SubjectTeamID=b.HomeTeamID THEN b.RatingIndirectSetPiecesAtthome
+	else b.RatingIndirectSetPiecesAttaway 
+end as BPInd_Att,
+case
+	when a.SubjectTeamID=b.HomeTeamID THEN b.RatingIndirectSetPiecesDefaway
+	else b.RatingIndirectSetPiecesdefhome 
+end as BPInd_Def,
+c.NumCABHome, 
+c.MaxMinHome, 
+c.NumCABAway, 
+c.MaxMinAway
+from eventos as a
+left join partidos as b ON a.MatchID=b.MatchID
+left join NumCAB as c ON a.matchID=c.matchId
+where EventTypeID='119' or EventTypeID='219'
+
+Para contar cuantos Cabezones hay en el campo por equipo
+select MatchID,RoleTeam,Specialty,max(Minutos),count(Pos)
+from (select * from alineacion_all where Pos > 99)
+group by MatchID,RoleTeam,Specialty
+having Specialty = 5
+
+select distinct a.MatchID, case when b.NumCAB is null then '0' else b.NumCAB end as NumCABHome, b.MaxMin as MaxMinHome, case when c.NumCAB is null then '0' else c.NumCAB end as NumCABAway, c.MaxMin as MaxMinAway
+from partidos as a
+left join (select MatchID,RoleTeam,Specialty,max(Minutos) as MaxMin,count(Pos) as NumCAB from (select * from alineacion_all where Pos > 99) group by MatchID,RoleTeam,Specialty having Specialty = 5 and RoleTeam='1') as b ON a.MatchID=b.MatchID
+left join (select MatchID,RoleTeam,Specialty,max(Minutos) as MaxMin,count(Pos) as NumCAB from (select * from alineacion_all where Pos > 99) group by MatchID,RoleTeam,Specialty having Specialty = 5 and RoleTeam='2') as c ON a.MatchID=c.MatchID
+
+
+EV35 DEL+XP
+create view del_xp as
+select a.MatchID, 
+a.Minute, 
+case
+	when a.EventTypeID='135'	then 'GOL'
+	else 'FALLO'
+end as Exito, 
+(b.PossessionFirstHalfHome+b.PossessionSecondHalfHome)/2 as PosMedia,
+a.SubXP as XP_Del,
+a.SubAnotacion as Ano_Del
+from eventos as a
+left join partidos as b ON a.MatchID=b.MatchID
+where EventTypeID='135' or EventTypeID='235'
+
+
+RAPIDOS
+CREATE VIEW NumRAP as 
+select distinct a.MatchID, case when b.NumRAP is null then 0 else b.NumRAP end as NumRAPHome, case when b.NumRAP is null then 0 else b.MaxMin end as MaxMinHome, case when c.NumRAP is null then 0 else c.NumRAP end as NumRAPAway, case when c.NumRAP is null then 0 else c.MaxMin end as MaxMinAway 
+from partidos as a 
+left join (select MatchID,RoleTeam,Specialty,max(Minutos) as MaxMin,count(Pos) as NumRAP from (select * from alineacion_all where Pos > 105) group by MatchID,RoleTeam,Specialty having Specialty = 2 and RoleTeam='1') as b ON a.MatchID=b.MatchID 
+left join (select MatchID,RoleTeam,Specialty,max(Minutos) as MaxMin,count(Pos) as NumRAP from (select * from alineacion_all where Pos > 105) group by MatchID,RoleTeam,Specialty having Specialty = 2 and RoleTeam='2') as c ON a.MatchID=c.MatchID
+
+create view NumRAP_Pond as
+select MatchId,case 
+when NumRAPHome=0 and NumRAPAway=0 then 0
+when NumRAPHome=0 and NumRAPAway<>0 then NumRAPAway
+when NumRAPAway=0 and NumRAPHome<>0 then NumRAPHome
+when NumRAPAway<>0 and NumRAPHome<>0 then NumRAPAway+NumRAPHome
+end as TotalRAP_real,
+case 
+when NumRAPHome=0 and NumRAPAway=0 then 0
+when NumRAPHome=0 and NumRAPAway<>0 then NumRAPAway*2
+when NumRAPAway=0 and NumRAPHome<>0 then NumRAPHome*2
+when NumRAPAway<>0 and NumRAPHome<>0 then NumRAPAway+NumRAPHome
+end as TotalRAP_Pond
+from NumRAP
+where TotalRAP_Pond<>0
+
+create view rap_pases as
+select a.MatchID, 
+a.Minute, 
+case
+	when a.EventTypeID='116'	then 'GOL'
+	else 'FALLO'
+end as Exito, 
+a.SubAnotacion as Ano_Del,
+a.ObjPases as Pas_Pas,
+c.TotalRAP_Pond
+from eventos as a
+left join partidos as b ON a.MatchID=b.MatchID
+left join NumRAP_Pond as c ON a.MatchId=c.matchID
+where EventTypeID='116' or EventTypeID='216'
+
+
+GENERAL
+
+create view partido_equipo_numEv as 
+select MatchID, SubjectTeamID, count(EventTypeID) as NumEV
+from (select a.MatchID, a.EventTypeID, a.SubjectTeamID from eventos as a left join SE as b ON a.EventTypeID=b.EventTypeID where TypeSEBD='SE')
+group by MatchID, SubjectTeamID
+
+create view partido_SE_equipo as
+select a.matchID, 
+a.HomeTeamID, 
+(a.PossessionFirstHalfHome+a.PossessionSecondHalfHome)/2 as PosMediaHome, 
+(a.PossessionFirstHalfAway+a.PossessionSecondHalfAway)/2 as PosMediaAway, 
+a.AwayTeamID, a.TacticTypeHome, a.TacticSkillHome, a.TacticTypeAway, a.TacticSkillAway, 
+case when b.NumEV is null then 0 else b.NumEV end as NumEVHome, 
+case when c.NumEV is null then 0 else c.NumEV end as NumEVAway
+from partidos as a
+left join partido_equipo_numEv as b ON a.matchID=b.matchID and a.HomeTeamID=b.SubjectTeamID
+left join partido_equipo_numEv as c ON a.matchID=c.matchID and a.AwayTeamID=c.SubjectTeamID
+
+Agrupacion por numero de eventos en el partido
+select case 
+when TacticTypeHome <> 7 and TacticTypeAway <> 7 then 0
+when TacticTypeHome = 7 and TacticTypeAway <> 7 then 1
+when TacticTypeHome <> 7 and TacticTypeAway = 7 then 1
+when TacticTypeHome = 7 and TacticTypeAway = 7 then 2
+end as NumEqCreativos,
+NumEVHome+NumEVAway as NumEV,
+count(MatchID) as NumPartidos
+from partido_SE_equipo
+group by NumEqCreativos,NumEV
+
+TECNICOS
+
+create view NumTEC as
+select distinct a.MatchID, case when b.NumTEC is null then 0 else b.NumTEC end as NumTECHome, case when b.NumTEC is null then 0 else b.MaxMin end as MaxMinHome, case when c.NumTEC is null then 0 else c.NumTEC end as NumTECAway, case when c.NumTEC is null then 0 else c.MaxMin end as MaxMinAway 
+from partidos as a 
+left join (select MatchID,RoleTeam,Specialty,max(Minutos) as MaxMin,count(Pos) as NumTEC from (select distinct MatchID,Player,RoleTeam,Specialty,Pos,Minutos from alineacion_all_contrarios_tec_cab where Pos > 105 and Specialty = 1 and "Specialty:1" = 5) group by MatchID,RoleTeam,Specialty having RoleTeam='1') as b ON a.MatchID=b.MatchID 
+left join (select MatchID,RoleTeam,Specialty,max(Minutos) as MaxMin,count(Pos) as NumTEC from (select distinct MatchID,Player,RoleTeam,Specialty,Pos,Minutos from alineacion_all_contrarios_tec_cab where Pos > 105 and Specialty = 1 and "Specialty:1" = 5) group by MatchID,RoleTeam,Specialty having RoleTeam='2') as c ON a.MatchID=c.MatchID
+
+create view NumTEC_Pond as
+select MatchId,case 
+when NumTECHome=0 and NumTECAway=0 then 0
+when NumTECHome=0 and NumTECAway<>0 then NumTECAway
+when NumTECAway=0 and NumTECHome<>0 then NumTECHome
+when NumTECAway<>0 and NumTECHome<>0 then NumTECAway+NumTECHome
+end as TotalTEC_real,
+case 
+when NumTECHome=0 and NumTECAway=0 then 0
+when NumTECHome=0 and NumTECAway<>0 then NumTECAway*2
+when NumTECAway=0 and NumTECHome<>0 then NumTECHome*2
+when NumTECAway<>0 and NumTECHome<>0 then NumTECAway+NumTECHome
+end as TotalTEC_Pond
+from NumTEC
+where TotalTEC_Pond<>0
+
+
