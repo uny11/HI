@@ -190,6 +190,12 @@ LATERAL
 
 IMPREVISIBLES
 
+CREATE VIEW NumIMP05 as 
+select distinct a.MatchID, case when b.NumIMP05 is null then 0 else b.NumIMP05 end as NumIMP05Home, case when b.NumIMP05 is null then 0 else b.MaxMin end as MaxMinHome, case when c.NumIMP05 is null then 0 else c.NumIMP05 end as NumIMP05Away, case when c.NumIMP05 is null then 0 else c.MaxMin end as MaxMinAway 
+from partidos as a 
+left join (select MatchID,RoleTeam,Specialty,max(Minutos) as MaxMin,count(Pos) as NumIMP05 from (select * from alineacion_all where Pos > 99 and Pos < 106) group by MatchID,RoleTeam,Specialty having Specialty = 4 and RoleTeam='1') as b ON a.MatchID=b.MatchID 
+left join (select MatchID,RoleTeam,Specialty,max(Minutos) as MaxMin,count(Pos) as NumIMP05 from (select * from alineacion_all where Pos > 99 and Pos < 106) group by MatchID,RoleTeam,Specialty having Specialty = 4 and RoleTeam='2') as c ON a.MatchID=c.MatchID
+
 
 
 
