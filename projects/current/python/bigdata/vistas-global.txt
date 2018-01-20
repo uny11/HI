@@ -198,5 +198,11 @@ left join (select MatchID,RoleTeam,Specialty,max(Minutos) as MaxMin,count(Pos) a
 
 
 
+UPDATE Especialidades
+
+update eventos
+set SubSpecialty=(select Specialty from jugadores where PlayerID=eventos.SubjectPlayerID)
+where SubSpecialty='-99'
+
 
 

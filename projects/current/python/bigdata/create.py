@@ -1,7 +1,7 @@
 
 import sqlite3
 #from datetime import datetime, timedelta
-from colorama import init, Fore, Back, Style
+#from colorama import init, Fore, Back, Style
 from os import walk, path
 
 def init_base_global():
