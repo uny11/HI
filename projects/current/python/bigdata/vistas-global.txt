@@ -199,10 +199,19 @@ left join (select MatchID,RoleTeam,Specialty,max(Minutos) as MaxMin,count(Pos) a
 
 
 UPDATE Especialidades
-
 update eventos
 set SubSpecialty=(select Specialty from jugadores where PlayerID=eventos.SubjectPlayerID)
 where SubSpecialty='-99'
+
+LIMPIAR partidos sin datos
+--Partidos sin datos
+select *
+from partidos as a
+left join eventos as b ON a.matchid=b.matchid
+where a.TacticTypeHome is null and b.MatchId is null
+
+delete from partidos 
+where TacticTypeHome is null
 
 
 
