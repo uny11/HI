@@ -191,10 +191,44 @@ LATERAL
 IMPREVISIBLES
 
 CREATE VIEW NumIMP05 as 
-select distinct a.MatchID, case when b.NumIMP05 is null then 0 else b.NumIMP05 end as NumIMP05Home, case when b.NumIMP05 is null then 0 else b.MaxMin end as MaxMinHome, case when c.NumIMP05 is null then 0 else c.NumIMP05 end as NumIMP05Away, case when c.NumIMP05 is null then 0 else c.MaxMin end as MaxMinAway 
-from partidos as a 
-left join (select MatchID,RoleTeam,Specialty,max(Minutos) as MaxMin,count(Pos) as NumIMP05 from (select * from alineacion_all where Pos > 99 and Pos < 106) group by MatchID,RoleTeam,Specialty having Specialty = 4 and RoleTeam='1') as b ON a.MatchID=b.MatchID 
-left join (select MatchID,RoleTeam,Specialty,max(Minutos) as MaxMin,count(Pos) as NumIMP05 from (select * from alineacion_all where Pos > 99 and Pos < 106) group by MatchID,RoleTeam,Specialty having Specialty = 4 and RoleTeam='2') as c ON a.MatchID=c.MatchID
+select distinct a.MatchID, d.ptotal_sobre, 
+case when b.NumIMP05 is null then 0 else b.NumIMP05 end as NumIMP05Home, case when b.NumIMP05 is null then 0 else b.MaxMin end as MaxMinHome, case when c.NumIMP05 is null then 0 else c.NumIMP05 end as NumIMP05Away, case when c.NumIMP05 is null then 0 else c.MaxMin end as MaxMinAway from partidos as a left join (select MatchID,RoleTeam,Specialty,max(Minutos) as MaxMin,count(Pos) as NumIMP05 from (select * from alineacion_all where Pos > 99 and Pos < 106) group by MatchID,RoleTeam,Specialty having Specialty = 4 and RoleTeam='1') as b ON a.MatchID=b.MatchID left join (select MatchID,RoleTeam,Specialty,max(Minutos) as MaxMin,count(Pos) as NumIMP05 from (select * from alineacion_all where Pos > 99 and Pos < 106) group by MatchID,RoleTeam,Specialty having Specialty = 4 and RoleTeam='2') as c ON a.MatchID=c.MatchID 
+left join partidos_ptotal_sobre as d ON a.MatchID=d.matchID 
+where TacticTypeHome <>7 and TacticTypeaway <>7
+
+drop view NumIMP05
+
+CREATE VIEW NumIMP05 as 
+select distinct a.MatchID,  
+case when b.NumIMP05 is null then 0 else b.NumIMP05 end as NumIMP05Home, case when b.NumIMP05 is null then 0 else b.MaxMin end as MaxMinHome, case when c.NumIMP05 is null then 0 else c.NumIMP05 end as NumIMP05Away, case when c.NumIMP05 is null then 0 else c.MaxMin end as MaxMinAway from partidos as a left join (select MatchID,RoleTeam,Specialty,max(Minutos) as MaxMin,count(Pos) as NumIMP05 from (select * from alineacion_all where Pos > 99 and Pos < 106) group by MatchID,RoleTeam,Specialty having Specialty = 4 and RoleTeam='1') as b ON a.MatchID=b.MatchID left join (select MatchID,RoleTeam,Specialty,max(Minutos) as MaxMin,count(Pos) as NumIMP05 from (select * from alineacion_all where Pos > 99 and Pos < 106) group by MatchID,RoleTeam,Specialty having Specialty = 4 and RoleTeam='2') as c ON a.MatchID=c.MatchID 
+where TacticTypeHome <>7 and TacticTypeaway <>7
+
+drop view NumIMP05_Pond
+
+CREATE VIEW NumIMP05_Pond as 
+select MatchId, ptotal_sobre, case when NumIMP05Home=0 and NumIMP05Away=0 then 0 when NumIMP05Home=0 and NumIMP05Away<>0 then NumIMP05Away when NumIMP05Away=0 and NumIMP05Home<>0 then NumIMP05Home when NumIMP05Away<>0 and NumIMP05Home<>0 then NumIMP05Away+NumIMP05Home end as TotalIMP_real, case when NumIMP05Home=0 and NumIMP05Away=0 then 0 when NumIMP05Home=0 and NumIMP05Away<>0 then NumIMP05Away*2 when NumIMP05Away=0 and NumIMP05Home<>0 then NumIMP05Home*2 when NumIMP05Away<>0 and NumIMP05Home<>0 then NumIMP05Away+NumIMP05Home end as TotalIMP05_Pond
+from NumIMP05 where TotalIMP05_Pond<>0
+
+PTOTAL
+
+create table partidos_ptotal_sobre as
+select matchID, ev05,ev06,ev08,ev09,ev15,ev16,ev19,ev25,ev37,ev38,ev39,cast(pTOTAL as real) as ptotal_sobre
+from partidos_plus_pbase_ptotal
+
+
+
+Cabezones
+select distinct a.MatchID 
+from alineacion_all as a
+left join partidos as b ON a.matchid=b.matchID 
+where a.Specialty = 5 and b.TacticTypeHome <> 7 and b.TacticTypeAway <> 7
+
+--partidos LAT+CAB sin JC
+select *
+from Partidos_Lat37_Con_Cab as a
+left join partidos as b ON a.matchid=b.matchid
+where b.TacticTypeHome<>7 and b.TacticTypeAway<>7 and a.NumExt=1
+
 
 
 
@@ -212,6 +246,21 @@ where a.TacticTypeHome is null and b.MatchId is null
 
 delete from partidos 
 where TacticTypeHome is null
+
+PAra los WO
+delete from alineacion
+where matchID IN (select MatchId from partidos_wo)
+
+delete from lesiones
+where matchID IN (select MatchId from partidos_wo)
+
+
+DELANTERO con XP
+--pàrtidos con delanteros y sin JC
+select distinct a.matchid
+from alineacion_all as a
+left join partidos as b ON a.matchId=b.matchId
+where a.Pos>110 and b.TacticTypeHome<>7 and b.TacticTypeAway<>7
 
 
 
