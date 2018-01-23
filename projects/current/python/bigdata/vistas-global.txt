@@ -264,3 +264,31 @@ where a.Pos>110 and b.TacticTypeHome<>7 and b.TacticTypeAway<>7
 
 
 
+
+CREATE VIEW partidos_plus_pbase as 
+select a.MatchID, 
+case when b.matchID is null then 0 else 0.5470 end as ev05, 
+case when c.matchID is null then 0 else 0.4845 end as ev06, 
+case when d.matchID is null then 0 else 0.5428 end as ev08, 
+case when e.matchID is null then 0 else 0.0063 end as ev09, 
+case when f.matchID is null then 0 else 0.6334 end as ev15, 
+case when f.matchID is null then 0 else 0.6559 end as ev16, 
+case when g.CABs is null or g.CABs = 0 then 0 else 0.2192 end as ev19, 
+case when h.matchID is null then 0 else 0.0050 end as ev25, 
+case when i.matchID is null then 0 else 0.2054 end as ev37, 
+case when j.matchID is null then 0 else 0.1412 end as ev38, 
+case when k.matchID is null then 0 else 0.7313 end as ev39 
+from partidos as a 
+left join NumIMP05_Pond as b ON a.matchID=b.matchID 
+left join NumIMP06_Pond as c ON a.matchID=c.matchID 
+left join NumIMP08_Pond as d ON a.matchID=d.matchID 
+left join NumIMP09_Pond as e ON a.matchID=e.matchID 
+left join NumRAP_Pond as f ON a.matchID=f.matchID 
+left join (select distinct matchId, NumCABHome+NumCABAway as CABs from NumCAB) as g ON a.matchID=g.matchID 
+left join NumIMP25_Pond as h ON a.matchID=h.matchID 
+left join Partidos_Lat37_Con_Cab as i ON a.matchID=i.matchID 
+left join lateral as j ON a.matchID=j.matchID 
+left join NumTEC_Pond as k ON a.matchID=k.matchID
+
+
+
