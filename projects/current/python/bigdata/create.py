@@ -315,4 +315,152 @@ for base in listaBases:
 conn.commit()
 cur.close()
 
-print('Proceso terminado')
+print('Proceso terminado\n')
+
+#Vamos a limpiar la base global de partidos sin datos
+conn = sqlite3.connect('global.sqlite3')
+cur = conn.cursor()
+
+cur.execute('DELETE FROM partidos WHERE TacticTypeHome is null')
+print('Eliminados los partidos sin datos de la tabla partidos')
+
+conn.commit()
+cur.close()
+
+#Vamos a limpiar la base global de partidos los partidos con WO
+conn = sqlite3.connect('global.sqlite3')
+cur = conn.cursor()
+
+cur.execute('DELETE FROM alineacion WHERE matchID IN (select MatchId from partidos_wo)')
+print('Eliminados los partidos WO de la tabla de alineacion')
+
+conn.commit()
+cur.close()
+
+conn = sqlite3.connect('global.sqlite3')
+cur = conn.cursor()
+
+cur.execute('DELETE FROM partidos WHERE matchID IN (select MatchId from partidos_wo)')
+print('Eliminados los partidos WO de la tabla de partidos')
+
+conn.commit()
+cur.close()
+
+conn = sqlite3.connect('global.sqlite3')
+cur = conn.cursor()
+
+cur.execute('DELETE FROM eventos WHERE matchID IN (select MatchId from partidos_wo)')
+print('Eliminados los partidos WO de la tabla de eventos')
+
+conn.commit()
+cur.close()
+
+conn = sqlite3.connect('global.sqlite3')
+cur = conn.cursor()
+
+cur.execute('UPDATE eventos SET SubSpecialty=(SELECT Specialty FROM jugadores WHERE PlayerID=eventos.SubjectPlayerID) WHERE SubSpecialty=-99')
+print('Actualizadas las especialidadas con -99')
+
+conn.commit()
+cur.close()
+
+conn = sqlite3.connect('global.sqlite3')
+cur = conn.cursor()
+
+cur.execute('DROP TABLE partidos_ptotal_sobre_all')
+cur.execute('CREATE TABLE partidos_ptotal_sobre_all AS SELECT matchID, ev05,ev06,ev08,ev09,ev15,ev16,ev19,ev25,ev37,ev38,ev39,cast(pTOTAL as real) as ptotal_sobre FROM partidos_plus_pbase_ptotal')
+cur.execute('DROP TABLE  partidos_ptotal_sobre')
+cur.execute('CREATE TABLE partidos_ptotal_sobre as select a.matchID, ev05,ev06,ev08,ev09,ev15,ev16,ev19,ev25,ev37,ev38,ev39,ptotal_sobre from partidos_ptotal_sobre_all as a inner join partidos as b ON a.matchID=b.matchid where b.TacticTypeHome<>7 and b.TacticTypeAway<>7')
+
+print('Reconstruida la tabla de pbase sobredimensionadas')
+
+conn.commit()
+cur.close()
+
+conn = sqlite3.connect('global.sqlite3')
+cur = conn.cursor()
+
+cur.execute('''drop table players_hab''')
+cur.execute('''create table players_hab as select * from players_ok''')
+cur.execute('''update eventos
+set SubPorteria=(select POR from players_hab where player=eventos.SubjectPlayerID)
+where SubPorteria=-99''')
+cur.execute('''update eventos
+set SubDefensa=(select DEF from players_hab where player=eventos.SubjectPlayerID)
+where SubDefensa=-99''')
+cur.execute('''update eventos
+set SubJugadas=(select JUG from players_hab where player=eventos.SubjectPlayerID)
+where SubJugadas=-99''')
+cur.execute('''update eventos
+set SubLateral=(select LAT from players_hab where player=eventos.SubjectPlayerID)
+where SubLateral=-99''')
+cur.execute('''update eventos
+set SubPases=(select PAS from players_hab where player=eventos.SubjectPlayerID)
+where SubPases=-99''')
+cur.execute('''update eventos
+set SubAnotacion=(select ANO from players_hab where player=eventos.SubjectPlayerID)
+where SubAnotacion=-99''')
+cur.execute('''update eventos
+set SubBP=(select BP from players_hab where player=eventos.SubjectPlayerID)
+where SubBP=-99''')
+cur.execute('''update eventos
+set SubXP=(select XP from players_hab where player=eventos.SubjectPlayerID)
+where SubXP=-99''')
+cur.execute('''update eventos
+set SubForma=(select FOR from players_hab where player=eventos.SubjectPlayerID)
+where SubForma=-99''')
+cur.execute('''update eventos
+set SubResistencia=(select RES from players_hab where player=eventos.SubjectPlayerID)
+where SubResistencia=-99''')
+cur.execute('''update eventos
+set SubLoyalty=(select FID from players_hab where player=eventos.SubjectPlayerID)
+where SubLoyalty=-99''')
+cur.execute('''update eventos
+set SubMotherClubBonus=(select MCB from players_hab where player=eventos.SubjectPlayerID)
+where SubMotherClubBonus='false' ''')
+
+print('Revisadas las habilidades de los Subject')
+
+cur.execute('''update eventos
+set ObjPorteria=(select POR from players_hab where player=eventos.ObjectPlayerID)
+where ObjPorteria=-99''')
+cur.execute('''update eventos
+set ObjDefensa=(select DEF from players_hab where player=eventos.ObjectPlayerID)
+where ObjDefensa=-99''')
+cur.execute('''update eventos
+set ObjJugadas=(select JUG from players_hab where player=eventos.ObjectPlayerID)
+where ObjJugadas=-99''')
+cur.execute('''update eventos
+set ObjLateral=(select LAT from players_hab where player=eventos.ObjectPlayerID)
+where ObjLateral=-99''')
+cur.execute('''update eventos
+set ObjPases=(select PAS from players_hab where player=eventos.ObjectPlayerID)
+where ObjPases=-99''')
+cur.execute('''update eventos
+set ObjAnotacion=(select ANO from players_hab where player=eventos.ObjectPlayerID)
+where ObjAnotacion=-99''')
+cur.execute('''update eventos
+set ObjBP=(select BP from players_hab where player=eventos.ObjectPlayerID)
+where ObjBP=-99''')
+cur.execute('''update eventos
+set ObjXP=(select XP from players_hab where player=eventos.ObjectPlayerID)
+where ObjXP=-99''')
+cur.execute('''update eventos
+set ObjForma=(select FOR from players_hab where player=eventos.ObjectPlayerID)
+where ObjForma=-99''')
+cur.execute('''update eventos
+set ObjResistencia=(select RES from players_hab where player=eventos.ObjectPlayerID)
+where ObjResistencia=-99''')
+cur.execute('''update eventos
+set ObjLoyalty=(select FID from players_hab where player=eventos.ObjectPlayerID)
+where ObjLoyalty=-99''')
+cur.execute('''update eventos
+set ObjMotherClubBonus=(select MCB from players_hab where player=eventos.ObjectPlayerID)
+where ObjMotherClubBonus='false' ''')
+
+print('Revisadas las habilidades de los Object')
+
+
+
+conn.commit()
+cur.close()
