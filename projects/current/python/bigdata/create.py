@@ -364,18 +364,18 @@ print('Actualizadas las especialidadas con -99')
 conn.commit()
 cur.close()
 
-conn = sqlite3.connect('global.sqlite3')
-cur = conn.cursor()
-
-cur.execute('DROP TABLE partidos_ptotal_sobre_all')
-cur.execute('CREATE TABLE partidos_ptotal_sobre_all AS SELECT matchID, ev05,ev06,ev08,ev09,ev15,ev16,ev19,ev25,ev37,ev38,ev39,cast(pTOTAL as real) as ptotal_sobre FROM partidos_plus_pbase_ptotal')
-cur.execute('DROP TABLE  partidos_ptotal_sobre')
-cur.execute('CREATE TABLE partidos_ptotal_sobre as select a.matchID, ev05,ev06,ev08,ev09,ev15,ev16,ev19,ev25,ev37,ev38,ev39,ptotal_sobre from partidos_ptotal_sobre_all as a inner join partidos as b ON a.matchID=b.matchid where b.TacticTypeHome<>7 and b.TacticTypeAway<>7')
-
-print('Reconstruida la tabla de pbase sobredimensionadas')
-
-conn.commit()
-cur.close()
+# conn = sqlite3.connect('global.sqlite3')
+# cur = conn.cursor()
+#
+# cur.execute('DROP TABLE partidos_ptotal_sobre_all')
+# cur.execute('CREATE TABLE partidos_ptotal_sobre_all AS SELECT matchID, ev05,ev06,ev08,ev09,ev15,ev16,ev19,ev25,ev37,ev38,ev39,cast(pTOTAL as real) as ptotal_sobre FROM partidos_plus_pbase_ptotal')
+# cur.execute('DROP TABLE  partidos_ptotal_sobre')
+# cur.execute('CREATE TABLE partidos_ptotal_sobre as select a.matchID, ev05,ev06,ev08,ev09,ev15,ev16,ev19,ev25,ev37,ev38,ev39,ptotal_sobre from partidos_ptotal_sobre_all as a inner join partidos as b ON a.matchID=b.matchid where b.TacticTypeHome<>7 and b.TacticTypeAway<>7')
+#
+# print('Reconstruida la tabla de pbase sobredimensionadas')
+#
+# conn.commit()
+# cur.close()
 
 conn = sqlite3.connect('global.sqlite3')
 cur = conn.cursor()
