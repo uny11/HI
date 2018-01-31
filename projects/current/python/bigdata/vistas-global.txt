@@ -334,21 +334,20 @@ having b.TacticTypeHome<>7 and b.TacticTypeAway<>7 and count(a.IndexEv) > 4
 RECONSTRUIR LA PBASE OBSERVADA
 
 
-drop view partidos_plus_pbase
+drop view partidos_plus_pbase;
 
-CREATE VIEW partidos_plus_pbase as 
-select a.MatchID, 
-case when b.matchID is null then 0 else 0.5325 end as ev05, 
-case when c.matchID is null then 0 else 0.4845 end as ev06, 
-case when d.matchID is null then 0 else 0.5428 end as ev08, 
-case when e.matchID is null then 0 else 0.0134 end as ev09, 
-case when f.matchID is null then 0 else 0.6334 end as ev15, 
-case when f.matchID is null then 0 else 0.6559 end as ev16, 
-case when g.CABs is null or g.CABs = 0 then 0 else 0.2192 end as ev19, 
-case when h.matchID is null then 0 else 0.0045 end as ev25, 
-case when i.matchID is null then 0 else 0.2054 end as ev37, 
-case when j.matchID is null then 0 else 0.1412 end as ev38, 
-case when k.matchID is null then 0 else 0.7313 end as ev39 
+CREATE VIEW partidos_plus_pbase as select a.MatchID, 
+case when b.matchID is null then 0 else 0.5401 end as ev05, 
+case when c.matchID is null then 0 else 0.4733 end as ev06, 
+case when d.matchID is null then 0 else 0.5763 end as ev08, 
+case when e.matchID is null then 0 else 0.0208 end as ev09, 
+case when f.matchID is null then 0 else 0.6107 end as ev15, 
+case when f.matchID is null then 0 else 0.6379 end as ev16, 
+case when g.CABs is null or g.CABs = 0 then 0 else 0.2152 end as ev19, 
+case when h.matchID is null then 0 else 0.0252 end as ev25, 
+case when i.matchID is null then 0 else 0.1879 end as ev37, 
+case when j.matchID is null then 0 else 0.1371 end as ev38, 
+case when k.matchID is null then 0 else 0.7254 end as ev39 
 from partidos as a 
 left join NumIMP05_Pond as b ON a.matchID=b.matchID 
 left join NumIMP06_Pond as c ON a.matchID=c.matchID 
@@ -359,17 +358,16 @@ left join (select distinct matchId, NumCABHome+NumCABAway as CABs from NumCAB) a
 left join NumIMP25_Pond as h ON a.matchID=h.matchID 
 left join Partidos_Lat37_Con_Cab as i ON a.matchID=i.matchID 
 left join lateral as j ON a.matchID=j.matchID 
-left join NumTEC_Pond as k ON a.matchID=k.matchID
+left join NumTEC_Pond as k ON a.matchID=k.matchID;
 
+drop view partidos_plus_pbase_ptotal;
+CREATE VIEW partidos_plus_pbase_ptotal as select *,cast( ev05+ev06+ev08+ev09+ev15+ev16+0.0004+0.1972+ev19+ev25+0.0451+0.0418+ev37+ev38+ev39 as real) as pTOTAL from partidos_plus_pbase;
 
-drop view partidos_plus_pbase_ptotal
-CREATE VIEW partidos_plus_pbase_ptotal as select *,cast( ev05+ev06+ev08+ev09+ev15+ev16+0.0128+0.1892+ev19+ev25+0.0499+0.0399+ev37+ev38+ev39 as real) as pTOTAL from partidos_plus_pbase
-
-DROP TABLE partidos_ptotal_sobre_all
-CREATE TABLE partidos_ptotal_sobre_all AS SELECT matchID, ev05,ev06,ev08,ev09,ev15,ev16,ev19,ev25,ev37,ev38,ev39,cast(pTOTAL as real) as ptotal_sobre FROM partidos_plus_pbase_ptotal
-DROP TABLE  partidos_ptotal_sobre
+DROP TABLE partidos_ptotal_sobre_all;
+CREATE TABLE partidos_ptotal_sobre_all AS SELECT matchID, ev05,ev06,ev08,ev09,ev15,ev16,ev19,ev25,ev37,ev38,ev39,cast(pTOTAL as real) as ptotal_sobre FROM partidos_plus_pbase_ptotal;
+DROP TABLE  partidos_ptotal_sobre;
 --CREATE TABLE partidos_ptotal_sobre as select a.matchID, ev05,ev06,ev08,ev09,ev15,ev16,ev19,ev25,ev37,ev38,ev39,ptotal_sobre from partidos_ptotal_sobre_all as a inner join partidos as b ON a.matchID=b.matchid where b.TacticTypeHome<>7 and b.TacticTypeAway<>7
-CREATE TABLE partidos_ptotal_sobre as select a.matchID, ev05,ev06,ev08,ev09,ev15,ev16,ev19,ev25,ev37,ev38,ev39,cast(ptotal_sobre*10000 as int) as ptotal_sobre from partidos_ptotal_sobre_all as a inner join partidos as b ON a.matchID=b.matchid where b.TacticTypeHome<>7 and b.TacticTypeAway<>7
+CREATE TABLE partidos_ptotal_sobre as select a.matchID, ev05,ev06,ev08,ev09,ev15,ev16,ev19,ev25,ev37,ev38,ev39,cast(ptotal_sobre*10000 as int) as ptotal_sobre from partidos_ptotal_sobre_all as a inner join partidos as b ON a.matchID=b.matchid where b.TacticTypeHome<>7 and b.TacticTypeAway<>7;
 
 
 
