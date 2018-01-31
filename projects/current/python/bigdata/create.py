@@ -6,7 +6,7 @@ from os import walk, path
 
 def init_base_global():
     # Creamos las tablas necesarias
-    conn = sqlite3.connect('global.sqlite3')
+    conn = sqlite3.connect('global.sqlite99')
     cur = conn.cursor()
 
     # tabla partidos
@@ -32,6 +32,11 @@ def init_base_global():
                 ObjAnotacion INTEGER, ObjXP INTEGER, ObjForma INTEGER, ObjResistencia INTEGER, ObjSpecialty INTEGER, ObjLoyalty INTEGER, ObjMotherClubBonus TEXT, ObjBP INTEGER,
                 UNIQUE(MatchID, IndexEv))
                 ''')
+    try:
+        cur.execute('''ALTER TABLE eventos ADD COLUMN SubAff INTEGER''')
+        cur.execute('''ALTER TABLE eventos ADD COLUMN ObjAff INTEGER''')
+    except:
+        None
 
     # tabla alineacion
     cur.execute('''
@@ -39,6 +44,10 @@ def init_base_global():
                 (MatchID INTEGER, RoleTeam INTEGER, RoleID INTEGER, PlayerID INTEGER,
                 UNIQUE(MatchID, RoleTeam, RoleID))
                 ''')
+    try:
+        cur.execute('''ALTER TABLE alineacion ADD COLUMN Behaviour INTEGER''')
+    except:
+        None
 
     # tabla tarjetas
     cur.execute('''
@@ -60,12 +69,30 @@ def init_base_global():
                 (MatchID INTEGER, TeamID INTEGER, SubjectPlayerID INTEGER, ObjectPlayerID INTEGER, NewPositionId INTEGER, MatchMinute INTEGER,
                 UNIQUE(MatchID, TeamID, SubjectPlayerID))
                 ''')
+    try:
+        cur.execute('''ALTER TABLE sustituciones ADD COLUMN NewPositionBehaviour INTEGER''')
+    except:
+        None
+
 
     # tabla jugadores
     cur.execute('''
                 CREATE TABLE IF NOT EXISTS jugadores
                 (PlayerID INTEGER PRIMARY KEY, Agreeability INTEGER, Aggressiveness INTEGER, Honesty INTEGER, Leadership INTEGER, Specialty INTEGER)
                 ''')
+
+    # tabla Porteros
+    cur.execute('''
+                CREATE TABLE IF NOT EXISTS porteros
+                (MatchID INTEGER, PlayerID INTEGER, Porteria INTEGER,
+                Defensa INTEGER, Jugadas INTEGER, Lateral INTEGER, Pases INTEGER, Anotacion INTEGER, BP INTEGER, XP INTEGER,
+                Forma INTEGER, Resistencia INTEGER, Specialty INTEGER, Loyalty INTEGER, MotherClubBonus TEXT,
+                UNIQUE(MatchID, PlayerID))
+                ''')
+    try:
+        cur.execute('''ALTER TABLE porteros ADD COLUMN PlayerAff INTEGER''')
+    except:
+        None
 
     # tabla SE
     cur.execute('''
@@ -139,7 +166,7 @@ listaBases = []
 
 listaDir = walk('.')
 
-# iniciamos lista de bases en la carpeta
+# iniciamos lista de bases en la carpeta de la version 0.x.x
 for root, dirs, files in listaDir:
     for base in files:
         (nombreFichero, extension) = path.splitext(base)
@@ -147,13 +174,10 @@ for root, dirs, files in listaDir:
             listaBases.append(nombreFichero+extension)
 
 
-# conn = sqlite3.connect('global.sqlite')
-# cur = conn.cursor()
-# conn.commit()
-# cur.close()
-
-conn = sqlite3.connect('global.sqlite3')
+conn = sqlite3.connect('global.sqlite99')
 cur = conn.cursor()
+
+print(listaBases)
 
 for base in listaBases:
     conn2 = sqlite3.connect(base)
@@ -315,10 +339,232 @@ for base in listaBases:
 conn.commit()
 cur.close()
 
-print('Proceso terminado\n')
+print('Proceso terminado para las bases v.0.x.x\n')
+
+
+# iniciamos lista de bases en la carpeta de la version 1.x.x
+listaDir3 = []
+listaDir3 = walk('.')
+listaBases3 = []
+
+for root, dirs, files in listaDir3:
+    for base in files:
+        (nombreFichero, extension) = path.splitext(base)
+        if (extension == '.sqlite3'):
+            listaBases3.append(nombreFichero+extension)
+
+
+conn = sqlite3.connect('global.sqlite99')
+cur = conn.cursor()
+
+print(listaBases3)
+
+for base in listaBases3:
+    conn2 = sqlite3.connect(base)
+    cur2 = conn2.cursor()
+
+    #Introducimos tabla alineacion
+    ListaMatchID = []
+    cur.execute('SELECT DISTINCT MatchID FROM alineacion')
+    for row in cur:
+        ListaMatchID.append(row[0])
+
+    cur2.execute('SELECT * FROM alineacion')
+    for row in cur2:
+        if row[0] in ListaMatchID:
+            None
+        else:
+            cur.execute('INSERT INTO alineacion (MatchID, RoleTeam, RoleID, PlayerID, Behaviour) VALUES (?, ?, ?, ?, ?)',(row[0],row[1],row[2],row[3],row[4]))
+
+    #Introducimos tabla jugadores
+    ListaPlayerID = []
+    cur.execute('SELECT DISTINCT PlayerID FROM jugadores')
+    for row in cur:
+        ListaPlayerID.append(row[0])
+
+    cur2.execute('SELECT * FROM jugadores')
+    for row in cur2:
+        if row[0] in ListaPlayerID:
+            None
+        else:
+            cur.execute('INSERT INTO jugadores (PlayerID, Agreeability, Aggressiveness, Honesty, Leadership, Specialty) VALUES (?, ?, ?, ?, ?, ?)',(row[0],row[1],row[2],row[3],row[4], row[5]))
+
+    #Introducimos tabla lesiones
+    ListaLesiones = []
+    cur.execute('SELECT DISTINCT MatchID,IndexInjury FROM lesiones')
+    for row in cur:
+        ListaLesiones.append(str(row[0])+str(row[1]))
+
+    cur2.execute('SELECT * FROM lesiones')
+    for row in cur2:
+        if str(row[0])+str(row[1]) in ListaLesiones:
+            None
+        else:
+            cur.execute('INSERT INTO lesiones (MatchID, IndexInjury, PlayerID, TeamID, InjuryType, InjuryMinute) VALUES (?, ?, ?, ?, ?, ?)',(row[0],row[1],row[2],row[3],row[4], row[5]))
+
+    #Introducimos tabla partidos
+    ListaMatchID2 = []
+    cur.execute('SELECT DISTINCT MatchID FROM partidos')
+    for row in cur:
+        ListaMatchID2.append(row[0])
+
+    cur2.execute('SELECT * FROM partidos')
+    for row in cur2:
+        if row[0] in ListaMatchID2:
+            None
+        else:
+            cur.execute('INSERT INTO partidos (MatchID, MatchType, SourceSystem, MatchDate, HomeTeamID, HomeGoals, AwayTeamID, AwayGoals, TacticTypeHome, TacticSkillHome, TacticTypeAway, TacticSkillAway, expulsiones, lesiones, PossessionFirstHalfHome, PossessionFirstHalfAway, PossessionSecondHalfHome, PossessionSecondHalfAway, RatingIndirectSetPiecesDefHome, RatingIndirectSetPiecesAttHome, RatingIndirectSetPiecesDefAway, RatingIndirectSetPiecesAttAway) VALUES (?,?,?,?,?,?, ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',(row[0],row[1],row[2],row[3],row[4],row[5],row[6],row[7],row[8],row[9],row[10],row[11],row[12],row[13],row[14],row[15],row[16],row[17],row[18],row[19],row[20],row[21]))
+
+    #Introducimos tabla sustituciones
+    ListaSus = []
+    cur.execute('SELECT DISTINCT MatchID,TeamID,SubjectPlayerID FROM sustituciones')
+    for row in cur:
+        ListaSus.append(str(row[0])+str(row[1])+str(row[2]))
+
+    cur2.execute('SELECT * FROM sustituciones')
+    for row in cur2:
+        if str(row[0])+str(row[1])+str(row[2]) in ListaSus:
+            None
+        else:
+            cur.execute('INSERT INTO sustituciones (MatchID, TeamID, SubjectPlayerID, ObjectPlayerID, NewPositionId, MatchMinute, NewPositionBehaviour) VALUES (?, ?, ?, ?, ?, ?, ?)',(row[0],row[1],row[2],row[3],row[4], row[5], row[6]))
+
+    #Introducimos tabla tarjetas
+    ListaTarjetas = []
+    cur.execute('SELECT DISTINCT MatchID,IndexTarjeta FROM tarjetas')
+    for row in cur:
+        ListaTarjetas.append(str(row[0])+str(row[1]))
+
+    cur2.execute('SELECT * FROM tarjetas')
+    for row in cur2:
+        if str(row[0])+str(row[1]) in ListaTarjetas:
+            None
+        else:
+            cur.execute('INSERT INTO tarjetas (MatchID, IndexTarjeta, PlayerID, TeamID, BookingType, BookingMinute) VALUES (?, ?, ?, ?, ?, ?)',(row[0],row[1],row[2],row[3],row[4], row[5]))
+
+    #Introducimos tabla eventos
+    ListaEventos = []
+    cur.execute('SELECT DISTINCT MatchID,IndexEv FROM eventos')
+    for row in cur:
+        ListaEventos.append(str(row[0])+str(row[1]))
+    cur2.execute('SELECT * FROM eventos')
+    for row in cur2:
+        if str(row[0])+str(row[1]) in ListaEventos:
+            None
+        else:
+            cur.execute('INSERT INTO eventos (MatchID, IndexEv, Minute, EventTypeID, SubjectTeamID, SubjectPlayerID, ObjectPlayerID, SubPorteria, SubDefensa, SubJugadas, SubLateral, SubPases, SubAnotacion, SubBP, SubXP, SubForma, SubResistencia, SubSpecialty, SubLoyalty, SubMotherClubBonus, ObjPorteria, ObjDefensa, ObjJugadas, ObjLateral, ObjPases, ObjAnotacion, ObjXP, ObjForma, ObjResistencia, ObjSpecialty, ObjLoyalty, ObjMotherClubBonus, ObjBP) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',(row[0],row[1],row[2],row[3],row[4], row[5], row[6], row[7], row[8], row[9], row[10], row[11], row[12], row[13], row[14], row[15], row[16], row[17], row[18], row[19], row[20], row[21], row[22], row[23], row[24], row[25], row[26], row[27], row[28], row[29], row[30], row[31], row[32]))
+
+    #Introducimos tabla eventosSub
+    ListaEventosSub = []
+    cur2.execute('SELECT DISTINCT MatchID,IndexEv,SubPorteria FROM eventos')
+    for row in cur2:
+        if row[2] != None and row[2] != -99:
+            ListaEventosSub.append(str(row[0])+str(row[1])+str(row[2]))
+
+    cur.execute('SELECT * FROM eventos')
+    for row in cur:
+        if str(row[0])+str(row[1])+str(row[7]) in ListaEventosSub:
+            cur2.execute('SELECT * FROM eventos WHERE MatchID=? and IndexEv=? LIMIT 1',(row[0], row[1]))
+            Hab = cur2.fetchone()
+            SubPor=Hab[7]
+            SubDef=Hab[8]
+            SubJug=Hab[9]
+            SubLat=Hab[10]
+            SubPas=Hab[11]
+            SubAno=Hab[12]
+            SubBP=Hab[13]
+            SubXP=Hab[14]
+            SubFor=Hab[15]
+            SubRes=Hab[16]
+            SubSpe=Hab[17]
+            SubLoy=Hab[18]
+            SubMot=Hab[19]
+            cur.execute('UPDATE eventos SET SubPorteria=?, SubDefensa=?, SubJugadas=?, SubLateral=?, SubPases=?, SubAnotacion=?, SubBP=?, SubXP=?, SubForma=?, SubResistencia=?, SubSpecialty=?, SubLoyalty=?, SubMotherClubBonus=? WHERE MatchID=? and IndexEv=?',(SubPor,SubDef,SubJug,SubLat,SubPas,SubAno,SubBP,SubXP,SubFor,SubRes,SubSpe,SubLoy,SubMot,row[0],row[1]))
+        else:
+            None
+
+    #Introducimos tabla eventosObj
+    ListaEventosObj = []
+    cur2.execute('SELECT DISTINCT MatchID,IndexEv,ObjPorteria FROM eventos')
+    for row in cur2:
+        if row[2] != None and row[2] != -99:
+            ListaEventosObj.append(str(row[0])+str(row[1])+str(row[2]))
+
+    cur.execute('SELECT * FROM eventos')
+    for row in cur:
+        if str(row[0])+str(row[1])+str(row[7]) in ListaEventosObj:
+            cur2.execute('SELECT * FROM eventos WHERE MatchID=? and IndexEv=? LIMIT 1',(row[0], row[1]))
+            Hab = cur2.fetchone()
+            ObjPor= Hab[20]
+            ObjDef=Hab[21]
+            ObjJug=Hab[22]
+            ObjLat=Hab[23]
+            ObjPas=Hab[24]
+            ObjAno=Hab[25]
+            ObjXP=Hab[26]
+            ObjFor=Hab[27]
+            ObjRes=Hab[28]
+            ObjSpe=Hab[29]
+            ObjLoy=Hab[30]
+            ObjMot=Hab[31]
+            ObjBP=Hab[32]
+            cur.execute('UPDATE eventos SET ObjPorteria=?, ObjDefensa=?, ObjJugadas=?, ObjLateral=?, ObjPases=?, ObjAnotacion=?, ObjXP=?, ObjForma=?, ObjResistencia=?, ObjSpecialty=?, ObjLoyalty=?, ObjMotherClubBonus=?, ObjBP=? WHERE MatchID=? and IndexEv=?',(ObjPor,ObjDef,ObjJug,ObjLat,ObjPas,ObjAno,ObjXP,ObjFor,ObjRes,ObjSpe,ObjLoy,ObjMot,ObjBP, row[0], row[1]))
+        else:
+            None
+
+    #Introducimos tabla porteros
+    ListaPorteros = []
+    cur.execute('SELECT DISTINCT MatchID,PlayerID FROM porteros')
+    for row in cur:
+        ListaPorteros.append(str(row[0])+str(row[1]))
+    cur2.execute('SELECT * FROM porteros')
+    for row in cur2:
+        if str(row[0])+str(row[1]) in ListaPorteros:
+            None
+        else:
+            cur.execute('INSERT INTO porteros (MatchID, PlayerID, Porteria, Defensa, Jugadas, Lateral, Pases, Anotacion, BP, XP, Forma, Resistencia, Specialty, Loyalty, MotherClubBonus) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',(row[0],row[1],row[2],row[3],row[4], row[5], row[6], row[7], row[8], row[9], row[10], row[11], row[12], row[13], row[14]))
+
+    #Introducimos tabla porteros_ok
+    ListaPorterosOK = []
+    cur2.execute('SELECT DISTINCT MatchID,PlayerID,Porteria FROM porteros')
+    for row in cur2:
+        if row[2] != None and row[2] != -99:
+            ListaPorterosOK.append(str(row[0])+str(row[1])+str(row[2]))
+
+    cur.execute('SELECT * FROM porteros')
+    for row in cur:
+        if str(row[0])+str(row[1])+str(row[2]) in ListaPorterosOK:
+            cur2.execute('SELECT * FROM porteros WHERE MatchID=? and PlayerID=? LIMIT 1',(row[0], row[1]))
+            Hab = cur2.fetchone()
+            SubPor=Hab[2]
+            SubDef=Hab[3]
+            SubJug=Hab[4]
+            SubLat=Hab[5]
+            SubPas=Hab[6]
+            SubAno=Hab[7]
+            SubBP=Hab[8]
+            SubXP=Hab[9]
+            SubFor=Hab[10]
+            SubRes=Hab[11]
+            SubSpe=Hab[12]
+            SubLoy=Hab[13]
+            SubMot=Hab[14]
+            cur.execute('UPDATE porteros SET Porteria=?, Defensa=?, Jugadas=?, Lateral=?, Pases=?, Anotacion=?, BP=?, XP=?, Forma=?, Resistencia=?, Specialty=?, Loyalty=?, MotherClubBonus=? WHERE MatchID=? and PlayerID=?',(SubPor,SubDef,SubJug,SubLat,SubPas,SubAno,SubBP,SubXP,SubFor,SubRes,SubSpe,SubLoy,SubMot,row[0],row[1]))
+        else:
+            None
+
+    conn2.commit()
+    cur2.close()
+
+    print('La base de datos:'+base+' ha sido añadida')
+
+conn.commit()
+cur.close()
+
+print('Proceso terminado para las bases v.1.x.x\n')
+
 
 #Vamos a limpiar la base global de partidos sin datos
-conn = sqlite3.connect('global.sqlite3')
+conn = sqlite3.connect('global.sqlite99')
 cur = conn.cursor()
 
 cur.execute('DELETE FROM partidos WHERE TacticTypeHome is null')
@@ -328,7 +574,7 @@ conn.commit()
 cur.close()
 
 #Vamos a limpiar la base global de partidos los partidos con WO
-conn = sqlite3.connect('global.sqlite3')
+conn = sqlite3.connect('global.sqlite99')
 cur = conn.cursor()
 
 cur.execute('DELETE FROM alineacion WHERE matchID IN (select MatchId from partidos_wo)')
@@ -337,7 +583,7 @@ print('Eliminados los partidos WO de la tabla de alineacion')
 conn.commit()
 cur.close()
 
-conn = sqlite3.connect('global.sqlite3')
+conn = sqlite3.connect('global.sqlite99')
 cur = conn.cursor()
 
 cur.execute('DELETE FROM partidos WHERE matchID IN (select MatchId from partidos_wo)')
@@ -346,7 +592,7 @@ print('Eliminados los partidos WO de la tabla de partidos')
 conn.commit()
 cur.close()
 
-conn = sqlite3.connect('global.sqlite3')
+conn = sqlite3.connect('global.sqlite99')
 cur = conn.cursor()
 
 cur.execute('DELETE FROM eventos WHERE matchID IN (select MatchId from partidos_wo)')
@@ -355,7 +601,7 @@ print('Eliminados los partidos WO de la tabla de eventos')
 conn.commit()
 cur.close()
 
-conn = sqlite3.connect('global.sqlite3')
+conn = sqlite3.connect('global.sqlite99')
 cur = conn.cursor()
 
 cur.execute('UPDATE eventos SET SubSpecialty=(SELECT Specialty FROM jugadores WHERE PlayerID=eventos.SubjectPlayerID) WHERE SubSpecialty=-99')
@@ -377,7 +623,7 @@ cur.close()
 # conn.commit()
 # cur.close()
 
-conn = sqlite3.connect('global.sqlite3')
+conn = sqlite3.connect('global.sqlite99')
 cur = conn.cursor()
 
 cur.execute('''drop table players_hab''')
