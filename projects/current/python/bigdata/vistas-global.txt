@@ -336,7 +336,7 @@ RECONSTRUIR LA PBASE OBSERVADA
 
 drop view partidos_plus_pbase;
 
-CREATE VIEW partidos_plus_pbase as select a.MatchID, 
+CREATE VIEW partidos_plus_pbase_1c as select a.MatchID, 
 case when b.matchID is null then 0 else 0.5401 end as ev05, 
 case when c.matchID is null then 0 else 0.4733 end as ev06, 
 case when d.matchID is null then 0 else 0.5763 end as ev08, 
@@ -371,5 +371,23 @@ CREATE TABLE partidos_ptotal_sobre as select a.matchID, ev05,ev06,ev08,ev09,ev15
 
 
 
+select a.*,b.playerID as POR_Des,c.playerID as POR_OK
+from alineacion_porteros as a
+left join (select distinct PlayerID from porteros where Porteria = -99) as b ON a.PlayerID=b.PlayerID
+left join (select distinct PlayerID from porteros where Porteria <> -99) as c ON a.PlayerID=c.PlayerID
+where b.playerID is not null and c.playerID is not null
 
+[post=17160417.1]
+[post=17160222.1]
+
+
+
+Estoy empezando a sacar % de aparicion para los partidos con 1 equipo jugando creativo.
+
+Solamente tengo 2 eventos hechos de momento:
+IMP+PaseLargo [post=17160417.1]
+TECvsCAB [post=17160222.1]
+
+Pero me parece muy curioso que la aparicion observada se doble. De momento, para esos 2 eventos la proporcion de 1,5 a 3 eventos de aparición del hilo General Para sacar la ponderacion por plus necesito revisar todos los eventos
+[post=17160200.1]
 
