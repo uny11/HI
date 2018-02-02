@@ -613,7 +613,7 @@ cur.close()
 conn = sqlite3.connect('global.sqlite99')
 cur = conn.cursor()
 
-cur.execute('UPDATE porteros SET Specialty=(SELECT Specialty FROM jugadores WHERE PlayerID=porteros.PlayerID) WHERE Specialty=-99 or SubSpecialty is null'')
+cur.execute('UPDATE porteros SET Specialty=(SELECT Specialty FROM jugadores WHERE PlayerID=porteros.PlayerID) WHERE Specialty=-99 or Specialty is null')
 print('Actualizadas las especialidadas con -99 de porteros')
 
 conn.commit()
@@ -654,7 +654,7 @@ set SubPases=(select PAS from players_hab where player=eventos.SubjectPlayerID)
 where SubPases=-99 or SubPases is null''')
 cur.execute('''update eventos
 set SubAnotacion=(select ANO from players_hab where player=eventos.SubjectPlayerID)
-where SubAnotacion=-99 or SubAnotacion es null''')
+where SubAnotacion=-99 or SubAnotacion is null''')
 cur.execute('''update eventos
 set SubBP=(select BP from players_hab where player=eventos.SubjectPlayerID)
 where SubBP=-99 or SubBP is null''')
