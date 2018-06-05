@@ -1,0 +1,26 @@
+
+05/06/2018
+
+Leela Chess Zero
+Proyecto basado en AlphaZero, con aprendizaje no humano. 
+http://lczero.org
+
+Jugar online con LC0
+play.lczero.org
+
+pagina del proyecto
+https://github.com/glinscott/leela-chess/wiki
+
+Mira en liches sus partidas.
+
+Con blancas:
+B22: Sicilian, Alapin's variation (1. e4 c5 2. c3)
+C02: French, advance variation (1. e4 e6 2. d4 d5 3. e5)
+C45: Scotch game (1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Nxd4)
+
+Con negras:
+Sicilian, Canal-Sokolsky (Rossolimo) Attack (B52) 1 e4 c5 2 Nf3 d6 3 Bb5+ Bd7
+
+
+
+
