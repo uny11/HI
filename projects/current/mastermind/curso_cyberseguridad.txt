@@ -1,0 +1,17 @@
+
+WINDOWS DEFENDER
+Todas las opciones actividas en primer punto (proteccion anitvirus y contra amenazas)
+Programador de tareas, un analisis diario?
+Escanear USB con WDefender, sino sale mirar video.
+
+FIREWALL
+Configurar
+
+MALWARE BYTE
+Como alternativa a Defender. No lo tengo claro si instalar.
+
+PAGINAS PARA ANALIZAR Fichero o URL
+VirusTotal
+HybridAnalysis
+Son publicas, ojo en subir datos confidenciales. Ideal para exe de instalacion.
+
